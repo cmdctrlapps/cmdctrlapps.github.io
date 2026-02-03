@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spent — Tutoriales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --apple-gray: #f5f5f7;
+            --apple-text: #1d1d1f;
+            --accent-green: #53C66E;
+        }
+        body {
+            font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: var(--apple-text);
+            background-color: #ffffff;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, .font-title { 
+            font-family: 'Outfit', sans-serif; 
+        }
+        
+        .editorial-font { 
+            font-family: 'Work Sans', sans-serif; 
+            letter-spacing: -0.01em;
+        }
+        
+        nav {
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tutorial-image {
+            width: 100%;
+            border-radius: 16px;
+            margin: 2rem 0;
+            background-color: var(--apple-gray);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .text-accent { color: var(--accent-green); }
+        .bg-accent { background-color: var(--accent-green); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navegación Modificada -->
+    <nav class="fixed top-0 w-full z-50 h-12 flex items-center border-b border-gray-100">
+        <div class="max-w-4xl mx-auto w-full px-6 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest">
+            <div class="flex items-center gap-1 font-title">
+                <a href="index.html" class="flex items-center gap-2 hover:text-accent transition">
+                    <i data-lucide="wallet" class="w-4 h-4 text-accent"></i>
+                    <span class="text-sm">Spent</span>
+                </a>
+                <span class="text-gray-300 mx-1 text-sm">/</span>
+                <span class="text-sm text-gray-400">Tutoriales</span>
+            </div>
+            <div class="flex gap-6 items-center text-gray-500">
+                <a href="index.html#journal" class="hover:text-black transition">Blog</a>
+                <a href="index.html#tutorials" class="hover:text-black transition">Tutoriales</a>
+                <a href="index.html#about" class="hover:text-black transition">Acerca de</a>
+                <a href="http://link.ripwallet.co/spent-download" target="_blank" class="bg-black text-white px-3 py-1 rounded-full hover:opacity-80 transition normal-case text-xs font-medium tracking-normal">DESCARGAR</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tutorial Content -->
+    <main class="pt-32 pb-24 px-6">
+        <article class="content-container">
+            <!-- Título Alineado a la Izquierda -->
+            <header class="mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Cómo configurar Apple Pay con Spent</h1>
+                <p class="text-xl text-gray-400 font-title">Aprende a automatizar tus gastos en menos de dos minutos.</p>
+            </header>
+
+            <!-- Secciones de Información e Imágenes -->
+            <div class="editorial-font text-lg text-gray-700 space-y-8 leading-relaxed">
+                <section>
+                    <h2 class="text-2xl font-bold text-black mb-4 font-title">1. Accede a la configuración</h2>
+                    <p>
+                        Para comenzar la integración, abre la aplicación y dirígete a la pestaña de ajustes en la esquina inferior derecha. Spent utiliza las APIs nativas de iOS para leer las notificaciones de transacciones de forma segura y privada, sin necesidad de acceder a tus credenciales bancarias.
+                    </p>
+                    <img src="https://via.placeholder.com/1200x800/f5f5f7/53C66E?text=Paso+1:+Configuración" alt="[Imagen de Configuración]" class="tutorial-image">
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-black mb-4 font-title">2. Activa los permisos de notificaciones</h2>
+                    <p>
+                        Es fundamental que permitas a Spent leer las notificaciones del sistema. Ve a Ajustes > Notificaciones > Spent y asegúrate de que el acceso esté permitido. Esto permitirá que la app detecte el banner de Apple Pay cada vez que realices una compra física o digital.
+                    </p>
+                    <img src="https://via.placeholder.com/1200x800/f5f5f7/53C66E?text=Paso+2:+Permisos" alt="[Imagen de Permisos]" class="tutorial-image">
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold text-black mb-4 font-title">3. Vincula tu tarjeta predeterminada</h2>
+                    <p>
+                        Dentro de Spent, selecciona la tarjeta que utilizas habitualmente. A partir de este momento, cada vez que uses el iPhone o Apple Watch para pagar, Spent te enviará una notificación instantánea preguntándote en qué categoría deseas clasificar el gasto.
+                    </p>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <!-- CTA Footer -->
+    <section class="py-24 bg-slate-50 border-t border-gray-100">
+        <div class="max-w-3xl mx-auto px-6 text-center space-y-8">
+            <h2 class="text-3xl font-bold font-title">¿Listo para tomar el control?</h2>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://apps.apple.com/cr/app/spent-controla-tus-gastos/id6449729260" target="_blank" class="bg-black text-white px-8 py-3 rounded-xl font-bold hover:opacity-90 transition flex items-center gap-2">
+                    <i data-lucide="apple" class="w-5 h-5"></i> App Store
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.cmdctrl.SpentApp" target="_blank" class="bg-white border-2 border-black text-black px-8 py-3 rounded-xl font-bold hover:bg-gray-50 transition flex items-center gap-2">
+                    <i data-lucide="play" class="w-5 h-5"></i> Google Play
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-white border-t border-gray-100">
+        <div class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-widest text-gray-400 gap-8 font-title">
+            <p>©Spent, 2026. Hecho en Costa Rica 🇨🇷</p>
+            <div class="flex gap-8">
+                <a href="/privacidad" class="hover:text-black transition">Política de Privacidad</a>
+                <a href="/terminos" class="hover:text-black transition">Términos y Condiciones</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroCircle = document.getElementById('heroCircle');
+            if (heroCircle) heroCircle.style.transform = `translate(-50%, calc(-50% + ${scrolled * 0.15}px))`;
+        });
+    </script>
+</body>
+</html>
