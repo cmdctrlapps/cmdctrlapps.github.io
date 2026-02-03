@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spent — Trackea tus gastos</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/spent.png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -102,16 +105,16 @@
             <div class="flex gap-6 items-center text-gray-500">
                 <a href="#journal" class="hover:text-black transition">Blog</a>
                 <a href="#tutorials" class="hover:text-black transition">Tutoriales</a>
-                <a href="#about" class="hover:text-black transition">Acerca de</a>
+                <a href="#about" class="hover:text-black transition">Equipo</a>
                 <a href="http://link.ripwallet.co/spent-download" target="_blank" class="bg-black text-white px-3 py-1 rounded-full hover:opacity-80 transition normal-case text-xs font-medium tracking-normal">DESCARGAR</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative h-screen flex items-center justify-center overflow-hidden pt-12">
+    <header class="relative h-screen flex items-center justify-center overflow-hidden pt-12 bg-[#E8F7EC]">
         <div class="absolute inset-0 z-0">
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#53C66E]/10 rounded-full blur-3xl opacity-50" id="heroCircle"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#53C66E]/5 rounded-full blur-3xl opacity-30" id="heroCircle"></div>
         </div>
         
         <div class="relative z-10 text-center space-y-8 px-6 max-w-2xl">
@@ -153,7 +156,8 @@
                 </div>
                 <div class="reveal flex justify-center">
                     <div class="phone-image-container">
-                        <img src="images/home.png" alt="Spent App Mockup" class="w-full h-auto rounded-[3rem]" onerror="this.src='https://via.placeholder.com/300x600/f5f5f7/53C66E?text=App+Screenshot'">
+                        <!-- Imagen del mockup actualizada a rounded-[12px] -->
+                        <img src="images/home.png" alt="Spent App Mockup" class="w-full h-auto rounded-[12px]" onerror="this.src='https://via.placeholder.com/300x600/f5f5f7/53C66E?text=App+Screenshot'">
                     </div>
                 </div>
             </div>
@@ -178,7 +182,7 @@
                         <time class="text-[10px] text-gray-400 font-bold uppercase tracking-widest font-title">Febrero 12, 2024</time>
                         <h3 class="text-2xl font-bold mt-1 tracking-tight">Spent 3.7: Historiales, sumas y recordatorios</h3>
                     </header>
-                    <a href="https://spentapp.co/blog/3-7" class="text-accent text-sm font-semibold hover:underline font-title">Leer qué hay nuevo →</a>
+                    <a href="https://ripwallet.kit.com/posts/spent-3-7-historiales-sumas-y-recordatorios" class="text-accent text-sm font-semibold hover:underline font-title">Leer qué hay nuevo →</a>
                 </div>
             </article>
 
@@ -194,8 +198,9 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="reveal bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-accent transition-colors group">
-                    <div class="w-12 h-12 bg-emerald-50 text-accent rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
+                <!-- Tutorial 1 -->
+                <div class="reveal bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-accent transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
+                    <div class="w-12 h-12 bg-emerald-50 text-accent rounded-xl flex items-center justify-center mb-6 transition-colors">
                         <i data-lucide="smartphone" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4 font-title leading-tight">Cómo trackear con Apple Pay?</h3>
@@ -204,31 +209,34 @@
                     </a>
                 </div>
 
-                <div class="reveal bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-accent transition-colors group">
-                    <div class="w-12 h-12 bg-emerald-50 text-accent rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
+                <!-- Tutorial 2 -->
+                <div class="reveal bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-accent transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
+                    <div class="w-12 h-12 bg-emerald-50 text-accent rounded-xl flex items-center justify-center mb-6 transition-colors">
                         <i data-lucide="download" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 font-title leading-tight">Exportar tus datos</h3>
+                    <h3 class="text-xl font-bold mb-4 font-title leading-tight">Cómo exportar tus datos?</h3>
                     <a href="#" class="text-accent text-sm font-semibold hover:underline flex items-center gap-1 font-title uppercase tracking-wider">
                         Ver tutorial <i data-lucide="chevron-right" class="w-4 h-4"></i>
                     </a>
                 </div>
 
-                <div class="reveal bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-accent transition-colors group">
-                    <div class="w-12 h-12 bg-emerald-50 text-accent rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
+                <!-- Tutorial 3 -->
+                <div class="reveal bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-accent transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
+                    <div class="w-12 h-12 bg-emerald-50 text-accent rounded-xl flex items-center justify-center mb-6 transition-colors">
                         <i data-lucide="trending-up" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 font-title leading-tight">Tu primer presupuesto</h3>
+                    <h3 class="text-xl font-bold mb-4 font-title leading-tight">Cómo empezar a trackear?</h3>
                     <a href="#" class="text-accent text-sm font-semibold hover:underline flex items-center gap-1 font-title uppercase tracking-wider">
                         Ver tutorial <i data-lucide="chevron-right" class="w-4 h-4"></i>
                     </a>
                 </div>
 
-                <div class="reveal bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-accent transition-colors group">
-                    <div class="w-12 h-12 bg-emerald-50 text-accent rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
-                        <i data-lucide="layers" class="w-6 h-6"></i>
+                <!-- Tutorial 4 -->
+                <div class="reveal bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-accent transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
+                    <div class="w-12 h-12 bg-emerald-50 text-accent rounded-xl flex items-center justify-center mb-6 transition-colors">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 font-title leading-tight">Categorías Personalizadas</h3>
+                    <h3 class="text-xl font-bold mb-4 font-title leading-tight">Cómo trackear por correo?</h3>
                     <a href="#" class="text-accent text-sm font-semibold hover:underline flex items-center gap-1 font-title uppercase tracking-wider">
                         Ver tutorial <i data-lucide="chevron-right" class="w-4 h-4"></i>
                     </a>
@@ -240,6 +248,11 @@
     <!-- Acerca de (About) Unificado -->
     <section id="about" class="py-32 bg-white">
         <div class="max-w-3xl mx-auto px-6">
+            <div class="mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-2 font-title">El equipo</h2>
+                <p class="text-3xl font-bold tracking-tight">Hecho 100% en Costa Rica 🇨🇷</p>
+            </div>
+
             <div class="grid md:grid-cols-2 gap-12 md:gap-16">
                 
                 <!-- Joseph -->
@@ -251,7 +264,7 @@
                         <div class="space-y-1">
                             <div class="flex items-center gap-3">
                                 <h3 class="text-xl font-bold font-title leading-none">Joseph </h3>
-                                <a href="https://github.com/#" target="_blank" class="text-accent hover:opacity-70 transition">
+                                <a href="https://github.com/JosephM2425" target="_blank" class="text-accent hover:opacity-70 transition">
                                     <i data-lucide="github" class="w-4 h-4"></i>
                                 </a>
                             </div>
