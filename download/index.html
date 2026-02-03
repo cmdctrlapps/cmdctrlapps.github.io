@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Redirecting to App Store...</title>
+    <!-- SEO & Social Preview for the link -->
+    <meta property="og:title" content="Download Spent">
+    
+    <script>
+        (function() {
+            // Your Store Links
+            const IOS_URL = "https://apps.apple.com/cr/app/spent-controla-tus-gastos/id6449729260";
+            const ANDROID_URL = "https://play.google.com/store/apps/details?id=com.cmdctrl.SpentApp";
+            const FALLBACK_URL = "https://spentapp.co/";
+
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Detection Logic
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                // User is on iOS
+                window.location.replace(IOS_URL);
+            } else if (/android/i.test(userAgent)) {
+                // User is on Android
+                window.location.replace(ANDROID_URL);
+            } else {
+                // User is on Desktop or other OS - send to landing page
+                window.location.replace(FALLBACK_URL);
+            }
+        })();
+    </script>
+    
+    <!-- Meta refresh as a backup if JS is disabled -->
+    <noscript>
+        <meta http-equiv="refresh" content="0;url=https://spentapp.co/">
+    </noscript>
+</head>
+<body style="background: #E8F7EC; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">
+    <div style="text-align: center;">
+        <p>Redirecting to the App Store...</p>
+    </div>
+</body>
+</html>

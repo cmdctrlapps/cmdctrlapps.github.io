@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo trackear gastos con Apple Pay</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/spent.png">
+
+    <style>
+        :root {
+            --apple-gray: #f5f5f7;
+            --apple-text: #1d1d1f;
+            --accent-green: #53C66E;
+        }
+        body {
+            font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: var(--apple-text);
+            background-color: #ffffff;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, .font-title { 
+            font-family: 'Outfit', sans-serif; 
+        }
+        
+        .editorial-font { 
+            font-family: 'Work Sans', sans-serif; 
+            letter-spacing: -0.01em;
+        }
+        
+        nav {
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+        }
+
+        .content-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .tutorial-image-wrapper {
+            width: 100%;
+            max-width: 280px; /* Smaller images on mobile */
+            margin: 1.5rem auto;
+        }
+
+        @media (min-width: 768px) {
+            .tutorial-image-wrapper {
+                max-width: none;
+                margin: 0;
+            }
+        }
+
+        .tutorial-image {
+            width: 100%;
+            border-radius: 12px;
+            background-color: var(--apple-gray);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            display: block;
+        }
+
+        .text-accent { color: var(--accent-green); }
+        .bg-accent { background-color: var(--accent-green); }
+
+        .step-section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .step-section:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navegación -->
+    <nav class="fixed top-0 w-full z-50 h-12 flex items-center border-b border-gray-100">
+        <div class="max-w-4xl mx-auto w-full px-6 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest">
+            <div class="flex items-center gap-1 font-title">
+                <a href="index.html" class="flex items-center gap-2 hover:text-accent transition">
+                    <i data-lucide="wallet" class="w-4 h-4 text-accent"></i>
+                    <span class="text-sm">Spent</span>
+                </a>
+                <span class="text-gray-300 mx-1 text-sm">/</span>
+                <span class="text-sm text-gray-400">Tutoriales</span>
+            </div>
+            <div class="flex gap-6 items-center text-gray-500">
+                <a href="index.html#journal" class="hover:text-black transition">Blog</a>
+                <a href="index.html#tutorials" class="hover:text-black transition">Tutoriales</a>
+                <a href="index.html#about" class="hover:text-black transition">Acerca de</a>
+                <a href="http://link.ripwallet.co/spent-download" target="_blank" class="bg-black text-white px-3 py-1 rounded-full hover:opacity-80 transition normal-case text-xs font-medium tracking-normal">DESCARGAR</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tutorial Content -->
+    <main class="pt-32 pb-24 px-6">
+        <article class="content-container">
+            <header class="mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Cómo trackear gastos cuando usas Apple Pay</h1>
+                <p class="text-lg text-gray-400 font-title">Para automatizar Spent y que se agreguen los gastos cuando pagas con Apple Pay, debes seguir estos pasos:</p>
+            </header>
+
+            <div class="editorial-font text-gray-700 leading-relaxed">
+                
+                <!-- Paso 1 -->
+                <section class="step-section">
+                    <h2 class="text-lg font-bold text-black mb-3 font-title">1. Instala el app de Atajos (Shortcuts) en tu teléfono</h2>
+                    <p class="text-base">Busca "Shortcuts" en la App Store si no la tienes instalada por defecto.</p>
+                </section>
+
+                <!-- Paso 2 -->
+                <section class="step-section grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h2 class="text-lg font-bold text-black mb-3 font-title">2. Abre la sección de Automatización dentro del app</h2>
+                        <p class="text-base">Toca la pestaña central en la barra inferior para entrar al menú de automatizaciones.</p>
+                    </div>
+                    <div class="tutorial-image-wrapper">
+                        <img src="https://ripwallet.notion.site/image/attachment%3Ae415a0da-fe27-4fa1-8fcc-055ba6b9db58%3Aimage.png?table=block&id=271b26e6-39ea-8085-b5f8-f3faa4d969e5&spaceId=a1b565f2-a1c2-4e64-b40a-6126d8e6827e&width=660&userId=&cache=v2" class="tutorial-image" alt="Paso 2">
+                    </div>
+                </section>
+
+                <!-- Paso 3 -->
+                <section class="step-section grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h2 class="text-lg font-bold text-black mb-3 font-title">3. Crea una nueva automatización</h2>
+                        <p class="text-base">Usa el botón de <strong>+</strong> arriba a la derecha para iniciar una nueva configuración personal.</p>
+                    </div>
+                    <div class="tutorial-image-wrapper">
+                        <img src="https://ripwallet.notion.site/image/attachment%3A323b8cd6-7e9f-48a2-8156-a04a5f0b2b13%3Aimage.png?table=block&id=271b26e6-39ea-807f-9b36-c1b58412cb0c&spaceId=a1b565f2-a1c2-4e64-b40a-6126d8e6827e&width=620&userId=&cache=v2" class="tutorial-image" alt="Paso 3">
+                    </div>
+                </section>
+
+                <!-- Paso 4 -->
+                <section class="step-section grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h2 class="text-lg font-bold text-black mb-3 font-title">4. Busca la automatización Wallet</h2>
+                        <p class="text-base">Desliza hacia abajo hasta encontrar el icono de Wallet entre las opciones disponibles.</p>
+                    </div>
+                    <div class="tutorial-image-wrapper">
+                        <img src="https://ripwallet.notion.site/image/attachment%3A3f9a0463-b4ae-4345-8bbf-a1eb64f12895%3Aimage.png?table=block&id=271b26e6-39ea-8028-896f-d484dc27ed27&spaceId=a1b565f2-a1c2-4e64-b40a-6126d8e6827e&width=620&userId=&cache=v2" class="tutorial-image" alt="Paso 4">
+                    </div>
+                </section>
+
+                <!-- Paso 5 -->
+                <section class="step-section grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h2 class="text-lg font-bold text-black mb-3 font-title">5. Configura la ejecución</h2>
+                        <p class="text-base">Selecciona tus tarjetas preferidas y marca la opción <strong>'Ejecutar de inmediato'</strong> para que el proceso sea transparente.</p>
+                    </div>
+                    <div class="tutorial-image-wrapper">
+                        <img src="https://ripwallet.notion.site/image/attachment%3A5489f31d-a210-431a-8f4f-0a5a54821ce9%3Aimage.png?table=block&id=271b26e6-39ea-8074-a612-f9013736ae2f&spaceId=a1b565f2-a1c2-4e64-b40a-6126d8e6827e&width=620&userId=&cache=v2" class="tutorial-image" alt="Paso 5">
+                    </div>
+                </section>
+
+                <!-- Paso 6 -->
+                <section class="step-section">
+                    <h2 class="text-lg font-bold text-black mb-3 font-title">6. Dale siguiente</h2>
+                </section>
+
+                <!-- Paso 7 -->
+                <section class="step-section grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h2 class="text-lg font-bold text-black mb-3 font-title">7. Selecciona 'Crear nuevo atajo'</h2>
+                        <p class="text-base">Esto te permitirá definir la acción personalizada que Spent ejecutará.</p>
+                    </div>
+                    <div class="tutorial-image-wrapper">
+                        <img src="https://ripwallet.notion.site/image/attachment%3Abef1cb6e-88d2-47ad-b428-e5de7ca98113%3Aimage.png?table=block&id=271b26e6-39ea-80ee-8be1-fbec99e04a5d&spaceId=a1b565f2-a1c2-4e64-b40a-6126d8e6827e&width=620&userId=&cache=v2" class="tutorial-image" alt="Paso 7">
+                    </div>
+                </section>
+
+                <!-- Paso 8 -->
+                <section class="step-section">
+                    <h2 class="text-lg font-bold text-black mb-3 font-title">8. Busca 'Spent' y selecciona la automatización</h2>
+                </section>
+
+                <!-- Paso 9 -->
+                <section class="step-section grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h2 class="text-lg font-bold text-black mb-3 font-title">9. Vincula el nombre del comercio</h2>
+                        <p class="text-base">En la opción de Nombre, elige <strong>'Seleccionar variable'</strong> y marca 'Entrada de atajo'. Luego cámbialo a 'Comercio'.</p>
+                    </div>
+                    <div class="tutorial-image-wrapper">
+                        <img src="https://ripwallet.notion.site/image/attachment%3A4b5a5ef4-b292-40fb-a7fd-bf03b0c5529f%3Aimage.png?table=block&id=271b26e6-39ea-80d5-8b73-f47971dcdc87&spaceId=a1b565f2-a1c2-4e64-b40a-6126d8e6827e&width=620&userId=&cache=v2" class="tutorial-image" alt="Paso 9">
+                    </div>
+                </section>
+
+                <!-- Paso 10 -->
+                <section class="step-section grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h2 class="text-lg font-bold text-black mb-3 font-title">10. Vincula el monto</h2>
+                        <p class="text-base">Repite el proceso para el Monto, seleccionando <strong>'Cantidad'</strong> dentro de la Entrada de atajo.</p>
+                    </div>
+                    <div class="tutorial-image-wrapper">
+                        <img src="https://ripwallet.notion.site/image/attachment%3Ac54e80b5-9c02-41d9-8399-2191c4dd8b2e%3Aimage.png?table=block&id=271b26e6-39ea-80ab-9d46-e9e78766c517&spaceId=a1b565f2-a1c2-4e64-b40a-6126d8e6827e&width=620&userId=&cache=v2" class="tutorial-image" alt="Paso 10">
+                    </div>
+                </section>
+
+                <!-- Paso 11 -->
+                <section class="step-section grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h2 class="text-lg font-bold text-black mb-3 font-title">11. ¡Listo!</h2>
+                        <p class="text-base">Guarda los cambios con el check ✔︎ y ya tienes Spent totalmente automatizado.</p>
+                    </div>
+                    <div class="tutorial-image-wrapper">
+                        <img src="https://ripwallet.notion.site/image/attachment%3A7a9fc143-dd17-40da-8bd2-1acd2e1bf8de%3Aimage.png?table=block&id=271b26e6-39ea-8071-a377-cb85ec3a0bbb&spaceId=a1b565f2-a1c2-4e64-b40a-6126d8e6827e&width=620&userId=&cache=v2" class="tutorial-image" alt="Paso 11">
+                    </div>
+                </section>
+
+            </div>
+        </article>
+    </main>
+
+    <!-- CTA Footer -->
+    <section class="py-24 bg-slate-50 border-t border-gray-100">
+        <div class="max-w-3xl mx-auto px-6 text-center space-y-8">
+            <h2 class="text-3xl font-bold font-title">¿Listo para tomar el control?</h2>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://apps.apple.com/cr/app/spent-controla-tus-gastos/id6449729260" target="_blank" class="bg-black text-white px-8 py-3 rounded-xl font-bold hover:opacity-90 transition flex items-center gap-2">
+                    <i data-lucide="apple" class="w-5 h-5"></i> App Store
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.cmdctrl.SpentApp" target="_blank" class="bg-white border-2 border-black text-black px-8 py-3 rounded-xl font-bold hover:bg-gray-50 transition flex items-center gap-2">
+                    <i data-lucide="play" class="w-5 h-5"></i> Google Play
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-white border-t border-gray-100">
+        <div class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-widest text-gray-400 gap-8 font-title">
+            <p>©Spent, 2026. Hecho en Costa Rica 🇨🇷</p>
+            <div class="flex gap-8">
+                <a href="/privacidad" class="hover:text-black transition">Política de Privacidad</a>
+                <a href="/terminos" class="hover:text-black transition">Términos y Condiciones</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroCircle = document.getElementById('heroCircle');
+            if (heroCircle) heroCircle.style.transform = `translate(-50%, calc(-50% + ${scrolled * 0.15}px))`;
+        });
+    </script>
+</body>
+</html>
