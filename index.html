@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spend — Simplicity in every dollar.</title>
+    <title>Spent — Trackea tus gastos</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -45,13 +45,25 @@
         }
         .journal-post:last-child { border-bottom: none; }
         
-        .journal-image {
+        /* Responsive 4:3 Aspect Ratio for Images */
+        .journal-image-container {
             width: 100%;
-            height: 400px;
-            object-fit: cover;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
             border-radius: 12px;
             background-color: var(--apple-gray);
             margin-bottom: 1.5rem;
+        }
+
+        .journal-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .journal-post:hover .journal-image-container img {
+            transform: scale(1.03);
         }
 
         .about-section { background-color: var(--apple-gray); }
@@ -71,6 +83,13 @@
         .text-accent { color: var(--accent-green); }
         .bg-accent { background-color: var(--accent-green); }
         .border-accent { border-color: var(--accent-green); }
+
+        /* Mockup Image Container */
+        .phone-image-container {
+            max-width: 300px;
+            width: 100%;
+            filter: drop-shadow(0 25px 50px rgba(0,0,0,0.15));
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -80,13 +99,12 @@
         <div class="max-w-4xl mx-auto w-full px-6 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest">
             <div class="flex items-center gap-2 cursor-pointer font-title" onclick="window.scrollTo(0,0)">
                 <i data-lucide="wallet" class="w-4 h-4 text-accent"></i>
-                <span class="text-sm">Spend</span>
+                <span class="text-sm">Spent</span>
             </div>
             <div class="flex gap-6 items-center text-gray-500">
-                <a href="#features" class="hover:text-black transition">Features</a>
-                <a href="#journal" class="hover:text-black transition">Journal</a>
-                <a href="#about" class="hover:text-black transition">About</a>
-                <a href="#download" class="bg-black text-white px-3 py-1 rounded-full hover:opacity-80 transition normal-case text-xs font-medium tracking-normal">Get App</a>
+                <a href="#journal" class="hover:text-black transition">Blog</a>
+                <a href="#about" class="hover:text-black transition">Acerca de</a>
+                <a href="http://link.ripwallet.co/spent-download" target="_blank" class="bg-black text-white px-3 py-1 rounded-full hover:opacity-80 transition normal-case text-xs font-medium tracking-normal">DESCARGAR</a>
             </div>
         </div>
     </nav>
@@ -98,13 +116,13 @@
         </div>
         
         <div class="relative z-10 text-center space-y-8 px-6 max-w-2xl">
-            <h1 class="text-6xl md:text-8xl font-bold tracking-tighter leading-none">Less is <br><span class="text-accent">wealth.</span></h1>
+            <h1 class="text-6xl md:text-8xl font-bold tracking-tighter leading-none">Trackea tus <br><span class="text-accent">gastos.</span></h1>
             <p class="text-xl md:text-2xl text-gray-500 font-normal leading-relaxed">
-                The most intentional way to track your spending. Minimal by design. Private by default.
+                La forma más simple para seguir tu presupuesto.
             </p>
             <div class="flex justify-center gap-4 pt-4">
-                 <a href="#download" class="text-accent font-semibold hover:underline flex items-center gap-1">
-                    Download now <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+                 <a href="http://link.ripwallet.co/spent-download" target="_blank" class="text-accent font-semibold hover:underline flex items-center gap-1">
+                    Descarga ya para Android o iPhone <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
                 </a>
             </div>
         </div>
@@ -115,33 +133,22 @@
         <div class="max-w-4xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-24 items-center">
                 <div class="reveal space-y-6">
-                    <h2 class="text-4xl font-bold tracking-tight">A tool, not a toy.</h2>
-                    <p class="text-lg text-gray-500">Unlike other apps that connect to your bank and clutter your feed with "uncategorized" transactions, Spend puts you in the driver's seat. Manual entry forces mindfulness.</p>
+                    <h2 class="text-4xl font-bold tracking-tight">Una herramienta sencilla</h2>
+                    <p class="text-lg text-gray-500">Spent te ayuda a trackear tus gastos en la forma más simple, dándote la información que necesitas para seguir tu presupuesto y eliminando el resto.</p>
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle-2" class="text-accent w-5 h-5 mt-1"></i>
-                            <span>One-handed entry in under 2 seconds.</span>
+                            <span>Trackeo automático con Apple Pay</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <i data-lucide="check-circle-2" class="text-accent w-5 h-5 mt-1"></i>
-                            <span>No cloud storage. Your data lives on your device.</span>
+                            <span>Historial de gastos.</span>
                         </li>
                     </ul>
                 </div>
                 <div class="reveal flex justify-center">
-                    <div class="w-64 h-[500px] bg-black rounded-[2.5rem] border-[4px] border-gray-900 shadow-2xl relative p-4">
-                        <div class="bg-white h-full w-full rounded-[2rem] p-6 space-y-8">
-                            <div class="h-2 w-12 bg-gray-100 rounded mx-auto"></div>
-                            <div class="space-y-1">
-                                <p class="text-[9px] text-gray-400 font-bold uppercase tracking-widest font-title">Available Balance</p>
-                                <p class="text-3xl font-bold font-title">$4,290.00</p>
-                            </div>
-                            <div class="space-y-3">
-                                <div class="h-10 w-full bg-gray-50 rounded-xl"></div>
-                                <div class="h-10 w-full bg-gray-50 rounded-xl border-l-4 border-accent"></div>
-                                <div class="h-10 w-full bg-gray-50 rounded-xl"></div>
-                            </div>
-                        </div>
+                    <div class="phone-image-container">
+                        <img src="images/phone-mockup.png" alt="Spent App Mockup" class="w-full h-auto rounded-[3rem]" onerror="this.src='https://via.placeholder.com/300x600/f5f5f7/53C66E?text=App+Screenshot'">
                     </div>
                 </div>
             </div>
@@ -152,16 +159,14 @@
     <section id="journal" class="py-32 bg-white">
         <div class="max-w-2xl mx-auto px-6">
             <div class="mb-20">
-                <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-2 font-title">The Journal</h2>
-                <p class="text-3xl font-bold tracking-tight">Updates, thoughts, and technical notes.</p>
+                <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-2 font-title">Blog</h2>
+                <p class="text-3xl font-bold tracking-tight">Actualizaciones, tutoriales y otras cosas.</p>
             </div>
             
+            <!-- Post 1 -->
             <article class="journal-post reveal">
-                <div class="journal-image flex items-center justify-center bg-gray-50 overflow-hidden">
-                    <div class="text-center p-12">
-                        <i data-lucide="camera" class="w-12 h-12 text-gray-200 mx-auto mb-4"></i>
-                        <p class="text-gray-300 font-medium font-title">Featured Image: Version 2.0 Interface</p>
-                    </div>
+                <div class="journal-image-container">
+                    <img src="https://embed.filekitcdn.com/e/p3x4E9m2CYHHWUrJB3vME9/gozNNKrKRiwbajAws53RoY/email" alt="Haptic Feedback Design" onerror="this.src='https://via.placeholder.com/1200x900/f5f5f7/53C66E?text=Featured+Image+1'">
                 </div>
                 <div class="space-y-4">
                     <header>
@@ -170,19 +175,15 @@
                     </header>
                     <div class="editorial-font text-[17px] text-gray-700 space-y-4 leading-relaxed">
                         <p>When we set out to build Spend, we didn't just want it to look good—we wanted it to <i>feel</i> right. Every time you log a transaction, there is a subtle haptic "click" that confirms your entry.</p>
-                        <p>This mimics the tactile satisfaction of a physical ledger. In an era of digital float, making software feel physical is how we bridge the gap between intent and action.</p>
                     </div>
                     <a href="#" class="text-accent text-sm font-semibold hover:underline font-title">Read the full technical breakdown →</a>
                 </div>
             </article>
 
+            <!-- Post 2 -->
             <article class="journal-post reveal">
-                <div class="journal-image flex items-center justify-center bg-slate-900 overflow-hidden relative">
-                    <div class="absolute inset-0 bg-[#53C66E]/5"></div>
-                    <div class="text-center p-12 relative z-10">
-                        <i data-lucide="shield-check" class="w-12 h-12 text-[#53C66E]/40 mx-auto mb-4"></i>
-                        <p class="text-gray-500 font-medium font-title">Featured Image: Encryption Protocol</p>
-                    </div>
+                <div class="journal-image-container">
+                    <img src="images/blog-2.jpg" alt="Privacy and Banking" onerror="this.src='https://via.placeholder.com/1200x900/1d1d1f/53C66E?text=Featured+Image+2'">
                 </div>
                 <div class="space-y-4">
                     <header>
@@ -191,7 +192,6 @@
                     </header>
                     <div class="editorial-font text-[17px] text-gray-700 space-y-4 leading-relaxed">
                         <p>The trend in fintech is automation. "Set it and forget it." We believe that is exactly the problem. When you forget about your spending, you lose agency over your capital.</p>
-                        <p>Spend is built on the philosophy of <i>Active Awareness</i>. By manually entering your data, you acknowledge the trade-off of every purchase.</p>
                     </div>
                     <a href="#" class="text-accent text-sm font-semibold hover:underline font-title">Read more on mindful spending →</a>
                 </div>
@@ -199,20 +199,44 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section - Joseph -->
     <section id="about" class="py-32 about-section">
         <div class="max-w-4xl mx-auto px-6 grid md:grid-cols-3 gap-12">
             <div class="md:col-span-1">
-                <div class="w-32 h-32 bg-white rounded-full mx-auto md:mx-0 shadow-sm flex items-center justify-center border-4 border-white mb-6">
+                <div class="w-32 h-32 bg-white rounded-full mx-auto md:mx-0 shadow-sm flex items-center justify-center border-4 border-white mb-6 overflow-hidden">
+                    <img src="images/joseph.jpg" alt="Joseph Murillo" class="w-full h-full object-cover" onerror="this.style.display='none'">
                     <i data-lucide="user" class="w-12 h-12 text-gray-200"></i>
                 </div>
-                <h3 class="text-xl font-bold">The Developer</h3>
-                <p class="text-xs text-gray-400 font-bold uppercase tracking-widest font-title">Engineer & Designer</p>
+                <h3 class="text-xl font-bold">El desarrollador</h3>
+                <p class="text-xs text-gray-400 font-bold uppercase tracking-widest font-title">Joseph Murillo</p>
             </div>
             <div class="md:col-span-2 space-y-6">
-                <h2 class="text-3xl font-bold tracking-tight">Built by one, for everyone.</h2>
                 <div class="text-lg text-gray-600 space-y-4">
                     <p>I started building Spend because I was tired of apps that were too busy selling me credit cards to actually help me track my money. I wanted something that felt like a tool—fast, reliable, and quiet.</p>
+                </div>
+                <div class="flex gap-4 pt-4">
+                    <a href="#" class="text-accent hover:opacity-70 transition"><i data-lucide="twitter"></i></a>
+                    <a href="#" class="text-accent hover:opacity-70 transition"><i data-lucide="github"></i></a>
+                    <a href="#" class="text-accent hover:opacity-70 transition"><i data-lucide="mail"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section - Kevin -->
+    <section class="py-32 bg-white">
+        <div class="max-w-4xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+            <div class="md:col-span-1">
+                <div class="w-32 h-32 bg-gray-50 rounded-full mx-auto md:mx-0 shadow-sm flex items-center justify-center border-4 border-white mb-6 overflow-hidden">
+                    <img src="images/kevin.jpg" alt="Kevin Aguilar" class="w-full h-full object-cover" onerror="this.style.display='none'">
+                    <i data-lucide="brush" class="w-12 h-12 text-gray-200"></i>
+                </div>
+                <h3 class="text-xl font-bold">El diseñador</h3>
+                <p class="text-xs text-gray-400 font-bold uppercase tracking-widest font-title">Kevin Aguilar</p>
+            </div>
+            <div class="md:col-span-2 space-y-6">
+                <div class="text-lg text-gray-600 space-y-4">
+                    <p>Creating an experience that doesn't feel overwhelming was the priority. Spent is designed to be invisible when you don't need it, and precise when you do.</p>
                 </div>
                 <div class="flex gap-4 pt-4">
                     <a href="#" class="text-accent hover:opacity-70 transition"><i data-lucide="twitter"></i></a>
@@ -226,12 +250,12 @@
     <!-- Download Section -->
     <section id="download" class="py-40 bg-white border-t border-gray-100">
         <div class="max-w-3xl mx-auto px-6 text-center space-y-10">
-            <h2 class="text-5xl font-bold tracking-tighter">Your financial clarity <br>starts today.</h2>
+            <h2 class="text-5xl font-bold tracking-tighter">Empieza a trackear tus gastos <br>hoy!</h2>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <a href="#" class="w-full sm:w-auto bg-black text-white px-10 py-5 rounded-2xl text-lg font-bold flex items-center justify-center gap-3 hover:opacity-90 transition transform hover:scale-105 font-title">
+                <a href="https://apps.apple.com/cr/app/spent-controla-tus-gastos/id6449729260" target="_blank" class="w-full sm:w-auto bg-black text-white px-10 py-5 rounded-2xl text-lg font-bold flex items-center justify-center gap-3 hover:opacity-90 transition transform hover:scale-105 font-title">
                     <i data-lucide="apple" class="fill-white"></i> <span>App Store</span>
                 </a>
-                <a href="#" class="w-full sm:w-auto bg-white border-2 border-gray-900 text-black px-10 py-5 rounded-2xl text-lg font-bold flex items-center justify-center gap-3 hover:bg-gray-50 transition transform hover:scale-105 font-title">
+                <a href="https://play.google.com/store/apps/details?id=com.cmdctrl.SpentApp" target="_blank" class="w-full sm:w-auto bg-white border-2 border-gray-900 text-black px-10 py-5 rounded-2xl text-lg font-bold flex items-center justify-center gap-3 hover:bg-gray-50 transition transform hover:scale-105 font-title">
                     <i data-lucide="play" class="fill-black"></i> <span>Google Play</span>
                 </a>
             </div>
@@ -240,10 +264,10 @@
 
     <footer class="py-12 bg-white border-t border-gray-100">
         <div class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-widest text-gray-400 gap-8 font-title">
-            <p>© 2024 Spend. Designed with intention.</p>
+            <p>©Spent, 2026. Hecho en Costa Rica 🇨🇷</p>
             <div class="flex gap-8">
-                <a href="#" class="hover:text-black transition">Privacy</a>
-                <a href="#" class="hover:text-black transition">Terms</a>
+                <a href="#" class="hover:text-black transition">Política de Privacidad</a>
+                <a href="#" class="hover:text-black transition">Términos y Condiciones</a>
             </div>
         </div>
     </footer>
