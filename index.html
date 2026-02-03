@@ -30,14 +30,14 @@
             letter-spacing: -0.01em;
         }
         
-        /* Apple-style sticky nav */
+        /* Navegación estilo Apple */
         nav {
             background: rgba(255, 255, 255, 0.72);
             backdrop-filter: saturate(180%) blur(20px);
             -webkit-backdrop-filter: saturate(180%) blur(20px);
         }
 
-        /* Daring Fireball / Hypercritical Style Blog */
+        /* Estilo editorial para el Blog */
         .journal-post {
             border-bottom: 1px solid #e5e7eb;
             padding-bottom: 3rem;
@@ -45,7 +45,7 @@
         }
         .journal-post:last-child { border-bottom: none; }
         
-        /* Responsive 4:3 Aspect Ratio for Images */
+        /* Proporción 4:3 para imágenes */
         .journal-image-container {
             width: 100%;
             aspect-ratio: 4 / 3;
@@ -66,9 +66,7 @@
             transform: scale(1.03);
         }
 
-        .about-section { background-color: var(--apple-gray); }
-
-        /* Animation for smooth reveal */
+        /* Animación de revelación al hacer scroll */
         .reveal {
             opacity: 0;
             transform: translateY(20px);
@@ -79,12 +77,12 @@
             transform: translateY(0);
         }
 
-        /* Custom Accent Utility */
+        /* Utilidades de color de marca */
         .text-accent { color: var(--accent-green); }
         .bg-accent { background-color: var(--accent-green); }
         .border-accent { border-color: var(--accent-green); }
 
-        /* Mockup Image Container */
+        /* Contenedor del Mockup */
         .phone-image-container {
             max-width: 300px;
             width: 100%;
@@ -94,7 +92,7 @@
 </head>
 <body class="antialiased">
 
-    <!-- Minimal Nav -->
+    <!-- Navegación -->
     <nav class="fixed top-0 w-full z-50 h-12 flex items-center border-b border-gray-100">
         <div class="max-w-4xl mx-auto w-full px-6 flex justify-between items-center text-[10px] font-bold uppercase tracking-widest">
             <div class="flex items-center gap-2 cursor-pointer font-title" onclick="window.scrollTo(0,0)">
@@ -103,6 +101,7 @@
             </div>
             <div class="flex gap-6 items-center text-gray-500">
                 <a href="#journal" class="hover:text-black transition">Blog</a>
+                <a href="#tutorials" class="hover:text-black transition">Tutoriales</a>
                 <a href="#about" class="hover:text-black transition">Acerca de</a>
                 <a href="http://link.ripwallet.co/spent-download" target="_blank" class="bg-black text-white px-3 py-1 rounded-full hover:opacity-80 transition normal-case text-xs font-medium tracking-normal">DESCARGAR</a>
             </div>
@@ -128,7 +127,7 @@
         </div>
     </header>
 
-    <!-- Features Section -->
+    <!-- Características -->
     <section id="features" class="py-32 bg-white border-t border-gray-100">
         <div class="max-w-4xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-24 items-center">
@@ -155,7 +154,7 @@
         </div>
     </section>
 
-    <!-- Journal Section -->
+    <!-- Blog (Journal) -->
     <section id="journal" class="py-32 bg-white">
         <div class="max-w-2xl mx-auto px-6">
             <div class="mb-20">
@@ -163,91 +162,140 @@
                 <p class="text-3xl font-bold tracking-tight">Actualizaciones, tutoriales y otras cosas.</p>
             </div>
             
-            <!-- Post 1 -->
             <article class="journal-post reveal">
                 <div class="journal-image-container">
                     <img src="https://embed.filekitcdn.com/e/p3x4E9m2CYHHWUrJB3vME9/gozNNKrKRiwbajAws53RoY/email" alt="Haptic Feedback Design" onerror="this.src='https://via.placeholder.com/1200x900/f5f5f7/53C66E?text=Featured+Image+1'">
                 </div>
                 <div class="space-y-4">
                     <header>
-                        <time class="text-[10px] text-gray-400 font-bold uppercase tracking-widest font-title">February 12, 2024</time>
-                        <h3 class="text-2xl font-bold mt-1 tracking-tight">Building the Perfect Haptic Feedback</h3>
+                        <time class="text-[10px] text-gray-400 font-bold uppercase tracking-widest font-title">Febrero 12, 2024</time>
+                        <h3 class="text-2xl font-bold mt-1 tracking-tight">Construyendo el Clic Háptico Perfecto</h3>
                     </header>
                     <div class="editorial-font text-[17px] text-gray-700 space-y-4 leading-relaxed">
-                        <p>When we set out to build Spend, we didn't just want it to look good—we wanted it to <i>feel</i> right. Every time you log a transaction, there is a subtle haptic "click" that confirms your entry.</p>
+                        <p>Cuando nos propusimos construir Spent, no solo queríamos que se viera bien, queríamos que se <i>sintiera</i> bien. Cada vez que registras una transacción, hay un sutil clic háptico que confirma tu entrada.</p>
                     </div>
-                    <a href="#" class="text-accent text-sm font-semibold hover:underline font-title">Read the full technical breakdown →</a>
+                    <a href="#" class="text-accent text-sm font-semibold hover:underline font-title">Leer análisis técnico completo →</a>
                 </div>
             </article>
 
-            <!-- Post 2 -->
             <article class="journal-post reveal">
                 <div class="journal-image-container">
                     <img src="images/blog-2.jpg" alt="Privacy and Banking" onerror="this.src='https://via.placeholder.com/1200x900/1d1d1f/53C66E?text=Featured+Image+2'">
                 </div>
                 <div class="space-y-4">
                     <header>
-                        <time class="text-[10px] text-gray-400 font-bold uppercase tracking-widest font-title">January 28, 2024</time>
-                        <h3 class="text-2xl font-bold mt-1 tracking-tight">Why we won't connect to your bank</h3>
+                        <time class="text-[10px] text-gray-400 font-bold uppercase tracking-widest font-title">Enero 28, 2024</time>
+                        <h3 class="text-2xl font-bold mt-1 tracking-tight">Por qué no nos conectamos a tu banco</h3>
                     </header>
                     <div class="editorial-font text-[17px] text-gray-700 space-y-4 leading-relaxed">
-                        <p>The trend in fintech is automation. "Set it and forget it." We believe that is exactly the problem. When you forget about your spending, you lose agency over your capital.</p>
+                        <p>La tendencia en fintech es la automatización. "Configúralo y olvídalo". Creemos que ese es exactamente el problema. Cuando te olvidas de tus gastos, pierdes el control sobre tu capital.</p>
                     </div>
-                    <a href="#" class="text-accent text-sm font-semibold hover:underline font-title">Read more on mindful spending →</a>
+                    <a href="#" class="text-accent text-sm font-semibold hover:underline font-title">Más sobre gastos conscientes →</a>
                 </div>
             </article>
         </div>
     </section>
 
-    <!-- About Section - Joseph -->
-    <section id="about" class="py-32 about-section">
-        <div class="max-w-4xl mx-auto px-6 grid md:grid-cols-3 gap-12">
-            <div class="md:col-span-1">
-                <div class="w-32 h-32 bg-white rounded-full mx-auto md:mx-0 shadow-sm flex items-center justify-center border-4 border-white mb-6 overflow-hidden">
-                    <img src="images/joseph.jpg" alt="Joseph Murillo" class="w-full h-full object-cover" onerror="this.style.display='none'">
-                    <i data-lucide="user" class="w-12 h-12 text-gray-200"></i>
-                </div>
-                <h3 class="text-xl font-bold">El desarrollador</h3>
-                <p class="text-xs text-gray-400 font-bold uppercase tracking-widest font-title">Joseph Murillo</p>
+    <!-- Tutoriales -->
+    <section id="tutorials" class="py-32 bg-slate-50 border-y border-gray-100">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-2 font-title">Guías Rápidas</h2>
+                <p class="text-3xl font-bold tracking-tight">Tutoriales paso a paso.</p>
             </div>
-            <div class="md:col-span-2 space-y-6">
-                <div class="text-lg text-gray-600 space-y-4">
-                    <p>I started building Spend because I was tired of apps that were too busy selling me credit cards to actually help me track my money. I wanted something that felt like a tool—fast, reliable, and quiet.</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="reveal bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-accent transition-colors group">
+                    <div class="w-12 h-12 bg-emerald-50 text-accent rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
+                        <i data-lucide="smartphone" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 font-title leading-tight">Configurar Apple Pay</h3>
+                    <a href="#" class="text-accent text-sm font-semibold hover:underline flex items-center gap-1 font-title uppercase tracking-wider">
+                        Ver tutorial <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
                 </div>
-                <div class="flex gap-4 pt-4">
-                    <a href="#" class="text-accent hover:opacity-70 transition"><i data-lucide="twitter"></i></a>
-                    <a href="#" class="text-accent hover:opacity-70 transition"><i data-lucide="github"></i></a>
-                    <a href="#" class="text-accent hover:opacity-70 transition"><i data-lucide="mail"></i></a>
+
+                <div class="reveal bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-accent transition-colors group">
+                    <div class="w-12 h-12 bg-emerald-50 text-accent rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
+                        <i data-lucide="download" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 font-title leading-tight">Exportar tus datos</h3>
+                    <a href="#" class="text-accent text-sm font-semibold hover:underline flex items-center gap-1 font-title uppercase tracking-wider">
+                        Ver tutorial <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div class="reveal bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-accent transition-colors group">
+                    <div class="w-12 h-12 bg-emerald-50 text-accent rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
+                        <i data-lucide="trending-up" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 font-title leading-tight">Tu primer presupuesto</h3>
+                    <a href="#" class="text-accent text-sm font-semibold hover:underline flex items-center gap-1 font-title uppercase tracking-wider">
+                        Ver tutorial <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <div class="reveal bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:border-accent transition-colors group">
+                    <div class="w-12 h-12 bg-emerald-50 text-accent rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-colors">
+                        <i data-lucide="layers" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 font-title leading-tight">Categorías Personalizadas</h3>
+                    <a href="#" class="text-accent text-sm font-semibold hover:underline flex items-center gap-1 font-title uppercase tracking-wider">
+                        Ver tutorial <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section - Kevin -->
-    <section class="py-32 bg-white">
-        <div class="max-w-4xl mx-auto px-6 grid md:grid-cols-3 gap-12">
-            <div class="md:col-span-1">
-                <div class="w-32 h-32 bg-gray-50 rounded-full mx-auto md:mx-0 shadow-sm flex items-center justify-center border-4 border-white mb-6 overflow-hidden">
-                    <img src="images/kevin.jpg" alt="Kevin Aguilar" class="w-full h-full object-cover" onerror="this.style.display='none'">
-                    <i data-lucide="brush" class="w-12 h-12 text-gray-200"></i>
+    <!-- Acerca de (About) Unificado -->
+    <section id="about" class="py-32 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 md:gap-24">
+                
+                <!-- Joseph -->
+                <div class="reveal space-y-6">
+                    <div class="flex items-center gap-5">
+                        <div class="w-20 h-20 bg-white rounded-full shadow-xl border-4 border-white overflow-hidden flex-shrink-0">
+                            <img src="images/joseph.jpg" alt="Joseph Murillo" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/80/f5f5f7/53C66E?text=J'">
+                        </div>
+                        <div class="space-y-0.5">
+                            <h3 class="text-xl font-bold font-title">Joseph Murillo</h3>
+                            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest font-title">El desarrollador</p>
+                        </div>
+                    </div>
+                    <p class="text-base text-gray-600 leading-relaxed">
+                        Empecé a construir Spent porque estaba cansado de aplicaciones que estaban más ocupadas vendiéndome tarjetas de crédito que ayudándome a seguir mi dinero. Quería algo que se sintiera como una herramienta: rápida, confiable y silenciosa.
+                    </p>
+                    <div class="flex gap-4 pt-2">
+                        <a href="https://github.com/#" target="_blank" class="text-accent hover:opacity-70 transition"><i data-lucide="github" class="w-5 h-5"></i></a>
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold">El diseñador</h3>
-                <p class="text-xs text-gray-400 font-bold uppercase tracking-widest font-title">Kevin Aguilar</p>
-            </div>
-            <div class="md:col-span-2 space-y-6">
-                <div class="text-lg text-gray-600 space-y-4">
-                    <p>Creating an experience that doesn't feel overwhelming was the priority. Spent is designed to be invisible when you don't need it, and precise when you do.</p>
+
+                <!-- Kevin -->
+                <div class="reveal space-y-6">
+                    <div class="flex items-center gap-5">
+                        <div class="w-20 h-20 bg-white rounded-full shadow-xl border-4 border-white overflow-hidden flex-shrink-0">
+                            <img src="images/kevin.jpg" alt="Kevin Aguilar" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/80/f5f5f7/53C66E?text=K'">
+                        </div>
+                        <div class="space-y-0.5">
+                            <h3 class="text-xl font-bold font-title">Kevin Aguilar</h3>
+                            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest font-title">El diseñador</p>
+                        </div>
+                    </div>
+                    <p class="text-base text-gray-600 leading-relaxed">
+                        La prioridad fue crear una experiencia que no se sintiera abrumadora. Spent está diseñada para ser invisible cuando no la necesitas y precisa cuando sí.
+                    </p>
+                    <div class="flex gap-4 pt-2">
+                        <a href="https://instagram.com/#" target="_blank" class="text-accent hover:opacity-70 transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    </div>
                 </div>
-                <div class="flex gap-4 pt-4">
-                    <a href="#" class="text-accent hover:opacity-70 transition"><i data-lucide="twitter"></i></a>
-                    <a href="#" class="text-accent hover:opacity-70 transition"><i data-lucide="github"></i></a>
-                    <a href="#" class="text-accent hover:opacity-70 transition"><i data-lucide="mail"></i></a>
-                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Download Section -->
+    <!-- Descarga -->
     <section id="download" class="py-40 bg-white border-t border-gray-100">
         <div class="max-w-3xl mx-auto px-6 text-center space-y-10">
             <h2 class="text-5xl font-bold tracking-tighter">Empieza a trackear tus gastos <br>hoy!</h2>
@@ -262,6 +310,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="py-12 bg-white border-t border-gray-100">
         <div class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-widest text-gray-400 gap-8 font-title">
             <p>©Spent, 2026. Hecho en Costa Rica 🇨🇷</p>
