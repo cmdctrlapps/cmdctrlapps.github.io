@@ -116,9 +116,7 @@
         
         <div class="relative z-10 text-center space-y-8 px-6 max-w-2xl">
             <h1 class="text-6xl md:text-8xl font-bold tracking-tighter leading-none">Trackea tus <br><span class="text-accent">gastos.</span></h1>
-            <p class="text-xl md:text-2xl text-gray-500 font-normal leading-relaxed">
-                La forma más simple para seguir tu presupuesto.
-            </p>
+
             <div class="flex justify-center gap-4 pt-4">
                  <a href="http://link.ripwallet.co/spent-download" target="_blank" class="text-accent font-semibold hover:underline flex items-center gap-1">
                     Descarga ya para Android o iPhone <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
@@ -147,7 +145,7 @@
                 </div>
                 <div class="reveal flex justify-center">
                     <div class="phone-image-container">
-                        <img src="images/phone-mockup.png" alt="Spent App Mockup" class="w-full h-auto rounded-[3rem]" onerror="this.src='https://via.placeholder.com/300x600/f5f5f7/53C66E?text=App+Screenshot'">
+                        <img src="images/home.png" alt="Spent App Mockup" class="w-full h-auto rounded-[3rem]" onerror="this.src='https://via.placeholder.com/300x600/f5f5f7/53C66E?text=App+Screenshot'">
                     </div>
                 </div>
             </div>
@@ -166,33 +164,16 @@
                 <div class="journal-image-container">
                     <img src="https://embed.filekitcdn.com/e/p3x4E9m2CYHHWUrJB3vME9/gozNNKrKRiwbajAws53RoY/email" alt="Haptic Feedback Design" onerror="this.src='https://via.placeholder.com/1200x900/f5f5f7/53C66E?text=Featured+Image+1'">
                 </div>
+
                 <div class="space-y-4">
                     <header>
                         <time class="text-[10px] text-gray-400 font-bold uppercase tracking-widest font-title">Febrero 12, 2024</time>
-                        <h3 class="text-2xl font-bold mt-1 tracking-tight">Construyendo el Clic Háptico Perfecto</h3>
+                        <h3 class="text-2xl font-bold mt-1 tracking-tight">Spent 3.7: Historiales, sumas y recordatorios</h3>
                     </header>
-                    <div class="editorial-font text-[17px] text-gray-700 space-y-4 leading-relaxed">
-                        <p>Cuando nos propusimos construir Spent, no solo queríamos que se viera bien, queríamos que se <i>sintiera</i> bien. Cada vez que registras una transacción, hay un sutil clic háptico que confirma tu entrada.</p>
-                    </div>
-                    <a href="#" class="text-accent text-sm font-semibold hover:underline font-title">Leer análisis técnico completo →</a>
+                    <a href="https://spentapp.co/blog/3-7" class="text-accent text-sm font-semibold hover:underline font-title">Leer qué hay nuevo →</a>
                 </div>
             </article>
 
-            <article class="journal-post reveal">
-                <div class="journal-image-container">
-                    <img src="images/blog-2.jpg" alt="Privacy and Banking" onerror="this.src='https://via.placeholder.com/1200x900/1d1d1f/53C66E?text=Featured+Image+2'">
-                </div>
-                <div class="space-y-4">
-                    <header>
-                        <time class="text-[10px] text-gray-400 font-bold uppercase tracking-widest font-title">Enero 28, 2024</time>
-                        <h3 class="text-2xl font-bold mt-1 tracking-tight">Por qué no nos conectamos a tu banco</h3>
-                    </header>
-                    <div class="editorial-font text-[17px] text-gray-700 space-y-4 leading-relaxed">
-                        <p>La tendencia en fintech es la automatización. "Configúralo y olvídalo". Creemos que ese es exactamente el problema. Cuando te olvidas de tus gastos, pierdes el control sobre tu capital.</p>
-                    </div>
-                    <a href="#" class="text-accent text-sm font-semibold hover:underline font-title">Más sobre gastos conscientes →</a>
-                </div>
-            </article>
         </div>
     </section>
 
@@ -250,44 +231,42 @@
 
     <!-- Acerca de (About) Unificado -->
     <section id="about" class="py-32 bg-white">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16 md:gap-24">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 md:gap-16">
                 
                 <!-- Joseph -->
-                <div class="reveal space-y-6">
+                <div class="reveal space-y-6 flex flex-col items-center md:items-start">
                     <div class="flex items-center gap-5">
-                        <div class="w-20 h-20 bg-white rounded-full shadow-xl border-4 border-white overflow-hidden flex-shrink-0">
-                            <img src="images/joseph.jpg" alt="Joseph Murillo" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/80/f5f5f7/53C66E?text=J'">
+                        <div class="w-14 h-14 bg-blue-100 text-blue-500 rounded-full shadow-lg border-2 border-white flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="terminal" class="w-7 h-7"></i>
                         </div>
-                        <div class="space-y-0.5">
-                            <h3 class="text-xl font-bold font-title">Joseph Murillo</h3>
+                        <div class="space-y-1">
+                            <div class="flex items-center gap-3">
+                                <h3 class="text-xl font-bold font-title leading-none">Joseph Murillo</h3>
+                                <a href="https://github.com/#" target="_blank" class="text-accent hover:opacity-70 transition">
+                                    <i data-lucide="github" class="w-4 h-4"></i>
+                                </a>
+                            </div>
                             <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest font-title">El desarrollador</p>
                         </div>
-                    </div>
-                    <p class="text-base text-gray-600 leading-relaxed">
-                        Empecé a construir Spent porque estaba cansado de aplicaciones que estaban más ocupadas vendiéndome tarjetas de crédito que ayudándome a seguir mi dinero. Quería algo que se sintiera como una herramienta: rápida, confiable y silenciosa.
-                    </p>
-                    <div class="flex gap-4 pt-2">
-                        <a href="https://github.com/#" target="_blank" class="text-accent hover:opacity-70 transition"><i data-lucide="github" class="w-5 h-5"></i></a>
                     </div>
                 </div>
 
                 <!-- Kevin -->
-                <div class="reveal space-y-6">
+                <div class="reveal space-y-6 flex flex-col items-center md:items-start">
                     <div class="flex items-center gap-5">
-                        <div class="w-20 h-20 bg-white rounded-full shadow-xl border-4 border-white overflow-hidden flex-shrink-0">
-                            <img src="images/kevin.jpg" alt="Kevin Aguilar" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/80/f5f5f7/53C66E?text=K'">
+                        <div class="w-14 h-14 bg-yellow-100 text-yellow-600 rounded-full shadow-lg border-2 border-white flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="palette" class="w-7 h-7"></i>
                         </div>
-                        <div class="space-y-0.5">
-                            <h3 class="text-xl font-bold font-title">Kevin Aguilar</h3>
+                        <div class="space-y-1">
+                            <div class="flex items-center gap-3">
+                                <h3 class="text-xl font-bold font-title leading-none">Kevin Aguilar</h3>
+                                <a href="https://instagram.com/ripwallet.cr" target="_blank" class="text-accent hover:opacity-70 transition">
+                                    <i data-lucide="instagram" class="w-4 h-4"></i>
+                                </a>
+                            </div>
                             <p class="text-[10px] text-gray-400 font-bold uppercase tracking-widest font-title">El diseñador</p>
                         </div>
-                    </div>
-                    <p class="text-base text-gray-600 leading-relaxed">
-                        La prioridad fue crear una experiencia que no se sintiera abrumadora. Spent está diseñada para ser invisible cuando no la necesitas y precisa cuando sí.
-                    </p>
-                    <div class="flex gap-4 pt-2">
-                        <a href="https://instagram.com/#" target="_blank" class="text-accent hover:opacity-70 transition"><i data-lucide="instagram" class="w-5 h-5"></i></a>
                     </div>
                 </div>
 
@@ -315,8 +294,8 @@
         <div class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold uppercase tracking-widest text-gray-400 gap-8 font-title">
             <p>©Spent, 2026. Hecho en Costa Rica 🇨🇷</p>
             <div class="flex gap-8">
-                <a href="#" class="hover:text-black transition">Política de Privacidad</a>
-                <a href="#" class="hover:text-black transition">Términos y Condiciones</a>
+                <a href="/privacidad" class="hover:text-black transition">Política de Privacidad</a>
+                <a href="/terminos" class="hover:text-black transition">Términos y Condiciones</a>
             </div>
         </div>
     </footer>
