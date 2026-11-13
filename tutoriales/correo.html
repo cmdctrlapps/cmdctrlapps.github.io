@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registra un gasto cuando te llega el comprobante por correo | Spent</title>
+  <meta name="description" content="Crea una automatización en Atajos para que, cuando te llegue el correo de transacción de tu banco, Spent te abra el registro del gasto.">
+  <link rel="canonical" href="https://spentapp.co/tutoriales/correo">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://spentapp.co/tutoriales/correo">
+  <meta property="og:title" content="Registra un gasto cuando te llega el comprobante por correo | Spent">
+  <meta property="og:description" content="Crea una automatización en Atajos para que, cuando te llegue el correo de transacción de tu banco, Spent te abra el registro del gasto.">
+  <meta property="og:image" content="https://spentapp.co/images/og-image.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#061319" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" href="/images/spent.png">
+  <link rel="apple-touch-icon" href="/images/spent.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/spent.css">
+  <link rel="stylesheet" href="/assets/tutoriales.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="brand"><img src="/images/spent.png" alt="" width="28" height="28">Spent</a>
+      <div class="nav-links">
+        <a href="/#actualizaciones" class="hide-sm">Actualizaciones</a>
+        <a href="/tutoriales" aria-current="page">Tutoriales</a>
+        <a href="/download" class="btn btn-primary btn-sm">Descargar</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container-narrow tut-page">
+    <a href="/tutoriales" class="tut-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Tutoriales</a>
+    <header class="tut-header">
+      <img src="/images/tutoriales/icon-apple-mail.png" alt="" width="64" height="64" class="tut-header-icon">
+      <span class="chip">iPhone</span>
+      <h1>Registra un gasto cuando te llega el comprobante por correo</h1>
+      <p class="lead">Crea una automatización en Atajos para que, cuando te llegue el correo de transacción de tu banco, Spent te abra el registro del gasto.</p>
+    </header>
+    
+    
+      <section class="tut-panel" data-version="ios" role="tabpanel">
+        
+        <p class="note"><strong>Importante:</strong> Spent no puede leer la información de tus correos. La automatización solo abre el registro del gasto cuando llega el comprobante, así que el nombre, el monto, el sobre y el método de pago los tienes que completar manualmente.</p>
+        
+        <ol class="tut-steps">
+          <li class="tut-step">
+            <div class="tut-step-num">1</div>
+            <div class="tut-step-body">
+              <h2>Instala Atajos y Mail</h2>
+              <div class="tut-step-text">Necesitas el app de <a href="https://apps.apple.com/us/app/shortcuts/id915249334" target="_blank" rel="noopener">Atajos (Shortcuts)</a> y el app de <a href="https://apps.apple.com/us/app/mail/id1108187098" target="_blank" rel="noopener">Mail</a> de Apple, con el correo donde te llegan los comprobantes configurado.</div>
+              
+            </div>
+          </li>
+          <li class="tut-step">
+            <div class="tut-step-num">2</div>
+            <div class="tut-step-body">
+              <h2>Abre la sección de Automatización</h2>
+              <div class="tut-step-text">Dentro del app de Atajos, toca la pestaña <strong>Automatización</strong>.</div>
+              <div class="tut-media"><figure><img src="/images/tutoriales/apple-pay/ios26/02-automatizacion.png" alt="Pestaña Automatización en el app de Atajos" loading="lazy" decoding="async"></figure></div>
+            </div>
+          </li>
+          <li class="tut-step">
+            <div class="tut-step-num">3</div>
+            <div class="tut-step-body">
+              <h2>Crea una nueva automatización</h2>
+              <div class="tut-step-text">Toca el botón <strong>+</strong>, arriba a la derecha.</div>
+              <div class="tut-media"><figure><img src="/images/tutoriales/apple-pay/ios26/03-nueva.png" alt="Botón para crear una nueva automatización" loading="lazy" decoding="async"></figure></div>
+            </div>
+          </li>
+          <li class="tut-step">
+            <div class="tut-step-num">4</div>
+            <div class="tut-step-body">
+              <h2>Busca la automatización Correo electrónico</h2>
+              <div class="tut-step-text">En la lista de disparadores, busca y selecciona <strong>Correo electrónico</strong>.</div>
+              <div class="tut-media"><figure><img src="/images/tutoriales/correo/04-correo.png" alt="Automatización Correo electrónico en Atajos" loading="lazy" decoding="async"></figure></div>
+            </div>
+          </li>
+          <li class="tut-step">
+            <div class="tut-step-num">5</div>
+            <div class="tut-step-body">
+              <h2>Pon el remitente y el asunto de tu banco</h2>
+              <div class="tut-step-text">Completa <strong>Remitente</strong> y <strong>El asunto contiene</strong> con los datos de los correos de tu banco. Como guía, estos son los de algunos bancos de Costa Rica:
+<ul>
+<li><strong>Banco Nacional:</strong> remitente <code>bncontacto@bncr.fi.cr</code>, asunto <em>Voucher Digital</em></li>
+<li><strong>BAC Credomatic:</strong> remitente <code>notificacion@notificacionesbaccr.com</code>, asunto <em>Notificación de transacción</em></li>
+<li><strong>Scotiabank:</strong> remitente <code>AlertasScotiabank@scotiabank.com</code>, asunto <em>Alerta Transacción</em></li>
+</ul></div>
+              <div class="tut-media"><figure><img src="/images/tutoriales/correo/05-remitente.png" alt="Opciones Remitente y El asunto contiene" loading="lazy" decoding="async"></figure></div>
+            </div>
+          </li>
+          <li class="tut-step">
+            <div class="tut-step-num">6</div>
+            <div class="tut-step-body">
+              <h2>Elige cómo se ejecuta</h2>
+              <div class="tut-step-text">Selecciona <strong>Ejecutar después de confirmar</strong> si quieres que te pregunte antes de abrirse, o <strong>Ejecutar de inmediato</strong> si quieres que se abra apenas llegue el correo. Luego toca <strong>Siguiente</strong>.</div>
+              
+            </div>
+          </li>
+          <li class="tut-step">
+            <div class="tut-step-num">7</div>
+            <div class="tut-step-body">
+              <h2>Crea un nuevo atajo</h2>
+              <div class="tut-step-text">Selecciona la opción <strong>Crear nuevo atajo</strong>.</div>
+              <div class="tut-media"><figure><img src="/images/tutoriales/apple-pay/ios26/07-nuevo-atajo.png" alt="Opción Crear nuevo atajo" loading="lazy" decoding="async"></figure></div>
+            </div>
+          </li>
+          <li class="tut-step">
+            <div class="tut-step-num">8</div>
+            <div class="tut-step-body">
+              <h2>Agrega la acción de Spent</h2>
+              <div class="tut-step-text">En <strong>Buscar acciones</strong>, escribe <em>Spent</em> y selecciona <strong>Agregar gasto a un sobre</strong>.</div>
+              <div class="tut-media"><figure><video src="/images/tutoriales/apple-pay/ios26/08-buscar-spent.mp4" aria-label="Buscando la acción de Spent en Atajos" autoplay muted loop playsinline preload="metadata"></video></figure></div>
+            </div>
+          </li>
+          <li class="tut-step">
+            <div class="tut-step-num">9</div>
+            <div class="tut-step-body">
+              <h2>Deja Mostrar al ejecutar activado y guarda</h2>
+              <div class="tut-step-text">Deja <strong>Mostrar al ejecutar</strong> activado para que Spent te pida los datos del gasto cada vez que llegue un comprobante. Toca el check ✔︎ arriba a la derecha y listo.</div>
+              <div class="tut-media"><figure><img src="/images/tutoriales/correo/09-listo.png" alt="Acción Agregar gasto a un sobre con Mostrar al ejecutar activado" loading="lazy" decoding="async"></figure></div>
+            </div>
+          </li>
+        </ol>
+      </section>
+    
+    <section class="tut-cta">
+      <h2>¿Todavía no tienes Spent?</h2>
+      <p>Descárgalo gratis para iPhone y Android.</p>
+      <a href="/download" class="btn btn-primary btn-lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>Descargar Spent</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© Spent, 2026. Hecho en Costa Rica 🇨🇷</p>
+      <div class="footer-links">
+        <a href="/privacidad">Política de privacidad</a>
+        <a href="/terminos">Términos y condiciones</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var tabs = document.querySelectorAll(".segmented [data-version]");
+      var panels = document.querySelectorAll(".tut-panel");
+      function select(id) {
+        tabs.forEach(function (t) { t.setAttribute("aria-selected", String(t.dataset.version === id)); });
+        panels.forEach(function (p) { p.hidden = p.dataset.version !== id; });
+      }
+      tabs.forEach(function (t) {
+        t.addEventListener("click", function () {
+          select(t.dataset.version);
+          history.replaceState(null, "", "#" + t.dataset.version);
+        });
+      });
+      var h = location.hash.slice(1);
+      if (h && Array.prototype.some.call(tabs, function (t) { return t.dataset.version === h; })) select(h);
+    })();
+  </script>
+</body>
+</html>

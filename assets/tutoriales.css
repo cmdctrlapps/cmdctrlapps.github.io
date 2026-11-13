@@ -1,0 +1,96 @@
+/* Tutoriales — usa los tokens de spent.css */
+
+.muted { color: var(--text-3); font-size: 14px; }
+
+/* Tarjeta de tutorial */
+.tut-list { display: grid; gap: 14px; }
+.tut-card { display: flex; gap: 18px; align-items: flex-start; padding: 22px; }
+.tut-card-icon { width: 52px; height: 52px; border-radius: 12px; flex-shrink: 0; }
+.tut-card-body { min-width: 0; flex: 1; }
+.tut-card-body h3 { font-size: 19px; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; }
+.tut-card-body p { margin-top: 6px; color: var(--text-3); font-size: 15px; line-height: 1.5; }
+.tut-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.tut-card-arrow { align-self: center; color: var(--text-muted); transition: transform 0.2s, color 0.2s; }
+.tut-card-arrow svg { width: 20px; height: 20px; }
+.tut-card:hover .tut-card-arrow { transform: translateX(3px); color: var(--accent-strong); }
+@media (max-width: 520px) {
+  .tut-card { padding: 18px; gap: 14px; }
+  .tut-card-icon { width: 44px; height: 44px; }
+  .tut-card-arrow { display: none; }
+}
+
+/* Páginas */
+.tut-page { padding-top: 40px; padding-bottom: 80px; }
+.tut-index-header { text-align: center; padding: 32px 0 40px; }
+.tut-index-header h1 { font-size: clamp(40px, 8vw, 60px); margin: 8px 0 12px; }
+
+.tut-back {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 15px; font-weight: 500; color: var(--link);
+  margin-bottom: 28px;
+}
+.tut-back svg { width: 18px; height: 18px; }
+.tut-back:hover { opacity: 0.75; }
+
+.tut-header { margin-bottom: 28px; }
+.tut-header-icon { width: 64px; height: 64px; border-radius: 14px; margin-bottom: 16px; }
+.tut-header h1 { font-size: clamp(30px, 6vw, 44px); margin: 12px 0 12px; }
+
+.tut-hint { font-size: 13px; color: var(--text-muted); margin: 10px 0 28px; }
+.tut-hint strong { color: var(--text-3); font-weight: 600; }
+
+.tut-panel > .note { margin-bottom: 20px; }
+.tut-shortcut { display: flex; gap: 14px; align-items: center; margin-bottom: 28px; background: var(--accent-soft); border-color: transparent; box-shadow: none; }
+.tut-shortcut-icon {
+  width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+  background: var(--accent); color: #10303F;
+  display: flex; align-items: center; justify-content: center;
+}
+.tut-shortcut-icon svg { width: 20px; height: 20px; }
+
+/* Pasos */
+.tut-steps { list-style: none; padding: 0; margin: 28px 0 0; }
+.tut-step { display: flex; gap: 16px; position: relative; padding-bottom: 40px; }
+.tut-step:not(:last-child)::before {
+  content: ""; position: absolute; left: 17px; top: 44px; bottom: 8px;
+  width: 2px; border-radius: 2px; background: var(--divider);
+}
+.tut-step-num {
+  flex-shrink: 0; width: 36px; height: 36px; border-radius: 999px;
+  background: var(--accent); color: #10303F;
+  font-weight: 700; font-size: 15px;
+  display: flex; align-items: center; justify-content: center;
+}
+.tut-step-body { min-width: 0; flex: 1; padding-top: 4px; }
+.tut-step-body h2 { font-size: 19px; font-weight: 600; line-height: 1.35; letter-spacing: -0.01em; }
+.tut-step-text { margin-top: 6px; color: var(--text-2); line-height: 1.65; }
+.tut-step-text strong { color: var(--text); font-weight: 600; }
+.tut-step-text a { color: var(--link); font-weight: 500; text-decoration: underline; text-underline-offset: 2px; }
+.tut-step-text ul { padding-left: 20px; margin: 10px 0 0; }
+.tut-step-text li + li { margin-top: 6px; }
+.tut-step-text code {
+  font-size: 13px; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 6px; padding: 1px 6px; word-break: break-all;
+}
+
+.tut-media { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 16px; }
+.tut-media figure { margin: 0; max-width: 100%; }
+.tut-media img, .tut-media video {
+  max-width: min(100%, 320px); max-height: 560px; width: auto; height: auto;
+  border-radius: 20px; border: 1px solid var(--border);
+  background: var(--surface); box-shadow: var(--shadow);
+}
+.tut-media figcaption { margin-top: 8px; font-size: 13px; font-weight: 500; color: var(--text-muted); }
+
+/* CTA */
+.tut-cta {
+  margin-top: 40px; padding: 40px 24px; text-align: center;
+  border-radius: var(--radius-lg); background: var(--accent-soft);
+}
+.tut-cta h2 { font-size: 26px; }
+.tut-cta p { color: var(--text-3); margin: 8px 0 22px; }
+
+/* Chip de video (Instagram) */
+.chip-video { gap: 6px; padding: 6px 12px; font-size: 13px; margin-bottom: 16px; transition: background 0.2s, color 0.2s; }
+.chip-video svg { width: 14px; height: 14px; }
+.chip-video:hover { background: var(--accent); color: #10303F; }

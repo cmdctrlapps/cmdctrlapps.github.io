@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Descargar Spent</title>
+    <meta name="description" content="Descarga Spent gratis para iPhone y Android.">
+    <meta property="og:title" content="Descargar Spent">
+    <meta property="og:description" content="Descarga Spent gratis para iPhone y Android.">
+    <meta property="og:image" content="https://spentapp.co/images/og-image.jpeg">
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/png" href="/images/spent.png">
+    <script>
+        (function () {
+            var IOS_URL = "https://apps.apple.com/cr/app/spent-controla-tus-gastos/id6449729260";
+            var ANDROID_URL = "https://play.google.com/store/apps/details?id=com.cmdctrl.SpentApp";
+            var FALLBACK_URL = "/#descargar";
+            var ua = navigator.userAgent || navigator.vendor || window.opera;
+            // iPadOS 13+ se reporta como Mac: lo detectamos por la pantalla táctil.
+            var isIPad = /Macintosh/.test(ua) && navigator.maxTouchPoints > 1;
+
+            if ((/iPad|iPhone|iPod/.test(ua) || isIPad) && !window.MSStream) {
+                window.location.replace(IOS_URL);
+            } else if (/android/i.test(ua)) {
+                window.location.replace(ANDROID_URL);
+            } else {
+                window.location.replace(FALLBACK_URL);
+            }
+        })();
+    </script>
+    <noscript><meta http-equiv="refresh" content="0;url=/#descargar"></noscript>
+</head>
+<body style="background:#E5FAEA;color:#212121;font-family:-apple-system,BlinkMacSystemFont,sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;padding:16px;text-align:center;">
+    <p>Te estamos llevando a la tienda de apps…</p>
+</body>
+</html>

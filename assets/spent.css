@@ -1,0 +1,252 @@
+/*
+ * Spent — sistema de diseño web
+ * Tokens tomados del app de iOS (Spent-IOS/SpentApp/Assets.xcassets y FontsNew):
+ * tipografía Outfit, verde AccentColor #7CE495, primaryButtonColor #10303F,
+ * superficies backgroundPacketItem / spentsListBackground y radio de 16pt.
+ */
+
+:root {
+    /* Marca */
+    --accent: #7CE495;            /* AccentColor */
+    --accent-strong: #1F6B34;     /* AccentColorDark (texto verde sobre claro) */
+    --accent-soft: #E5FAEA;       /* colorFeatureBackground */
+    --accent-tint: #E7F8E9;       /* AboutUsCard */
+    --profit: #257E3A;            /* profitGreen */
+    --loss: #C1130B;              /* lossRed */
+    --primary: #10303F;           /* primaryButtonColor */
+    --on-primary: #FFFFFF;
+
+    /* Superficies */
+    --bg: #FFFFFF;                /* backgroundColor */
+    --surface: #F7F7F7;           /* backgroundPacketItem / input */
+    --surface-raised: #FFFFFF;    /* packetRow / tabBar */
+    --border: #EDEDED;            /* newBorder / packetBorderColor */
+    --divider: #E7E7E7;           /* dividerColor */
+    --segment-bg: #F7F7F7;        /* tabColorBackground */
+    --segment-selected: #FFFFFF;  /* tabColorSelected */
+
+    /* Texto */
+    --text: #212121;              /* textColor / SpentTitle */
+    --text-2: #424242;            /* textColorSecondary */
+    --text-3: #616161;            /* textColorThird */
+    --text-muted: #7D7D82;        /* iconColor / secondaryButtons */
+    --link: #0A7FC2;              /* textColorUnlimited */
+
+    --note-bg: #FFF8E6;
+    --note-border: #F6DFA0;
+
+    /* Forma */
+    --radius-sm: 12px;
+    --radius: 16px;
+    --radius-lg: 24px;
+    --radius-pill: 999px;
+    --shadow: 0 1px 2px rgba(16, 48, 63, 0.04), 0 8px 24px -12px rgba(16, 48, 63, 0.14);
+    --shadow-lg: 0 24px 60px -24px rgba(16, 48, 63, 0.35);
+
+    --font: "Outfit", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    --nav-bg: rgba(255, 255, 255, 0.78);
+
+    color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --accent-strong: #7CE495;
+        --accent-soft: #1A4C26;       /* onboardingPacketBackgroundSelected */
+        --accent-tint: #265450;
+        --profit: #53C66E;
+        --loss: #DD443C;
+        --primary: #7CE495;
+        --on-primary: #061319;
+        --bg: #061319;
+        --surface: #1B303C;
+        --surface-raised: #1B303C;
+        --border: #424F57;
+        --divider: #2B3D4C;
+        --segment-bg: #18252B;
+        --segment-selected: #2E5266;
+        --text: #EEEFF0;
+        --text-2: #C7D3DD;
+        --text-3: #C7D3DD;
+        --text-muted: #8FA0AC;
+        --link: #25A9F4;
+        --note-bg: #2A2614;
+        --note-border: #5A4D1E;
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+        --shadow-lg: 0 24px 60px -24px rgba(0, 0, 0, 0.7);
+        --nav-bg: rgba(6, 19, 25, 0.78);
+    }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+    margin: 0;
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 { margin: 0; line-height: 1.15; letter-spacing: -0.02em; font-weight: 700; }
+p { margin: 0; }
+img, video { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+.container { width: 100%; max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+.container-narrow { width: 100%; max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+/* ---------- Navegación ---------- */
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--nav-bg);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--border);
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 12px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; }
+.brand img { width: 28px; height: 28px; border-radius: 7px; }
+.nav-links { display: flex; align-items: center; gap: 24px; font-size: 15px; font-weight: 500; color: var(--text-3); }
+.nav-links a:not(.btn):hover { color: var(--text); }
+.nav-links a[aria-current="page"] { color: var(--text); }
+@media (max-width: 640px) {
+    .nav-links { gap: 14px; font-size: 14px; }
+    .nav-links .hide-sm { display: none; }
+}
+
+/* ---------- Botones ---------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 0 20px;
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    border: 0;
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
+    white-space: nowrap;
+}
+.btn:active { transform: scale(0.97); }
+.btn-primary { background: var(--primary); color: var(--on-primary); }
+.btn-primary:hover { opacity: 0.9; }
+.btn-accent { background: var(--accent); color: #10303F; }
+.btn-accent:hover { opacity: 0.9; }
+.btn-secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+.btn-secondary:hover { background: var(--accent-soft); }
+.btn-sm { min-height: 36px; padding: 0 14px; font-size: 14px; border-radius: 12px; }
+.btn-lg { min-height: 56px; padding: 0 28px; font-size: 17px; }
+.btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+/* ---------- Tipografía ---------- */
+.eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent-strong);
+}
+.section-title { font-size: clamp(30px, 5vw, 44px); margin-top: 8px; }
+.lead { font-size: 18px; color: var(--text-3); line-height: 1.55; }
+
+/* ---------- Secciones ---------- */
+.section { padding: 96px 0; }
+.section-alt { background: var(--surface); }
+.section-head { margin-bottom: 40px; }
+@media (max-width: 640px) { .section { padding: 64px 0; } }
+
+/* ---------- Tarjetas (estilo "sobre" del app) ---------- */
+.card {
+    display: block;
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+a.card { transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
+a.card:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: var(--shadow-lg); }
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent-strong);
+    background: var(--accent-soft);
+    border-radius: var(--radius-pill);
+    padding: 3px 10px;
+}
+
+/* Lista tipo "Ajustes" de iOS */
+.list { background: var(--surface-raised); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.list-row { display: flex; align-items: center; gap: 14px; padding: 16px 18px; }
+.list-row + .list-row { border-top: 1px solid var(--divider); }
+.list-row .icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--accent); color: #10303F; flex-shrink: 0;
+}
+.list-row .icon svg { width: 20px; height: 20px; }
+
+/* Control segmentado (tabs del app) */
+.segmented {
+    display: inline-flex;
+    gap: 2px;
+    padding: 3px;
+    border-radius: 12px;
+    background: var(--segment-bg);
+    border: 1px solid var(--border);
+}
+.segmented button {
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-3);
+    background: transparent;
+    border: 0;
+    border-radius: 9px;
+    padding: 7px 18px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.segmented button[aria-selected="true"] {
+    background: var(--segment-selected);
+    color: var(--text);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.note {
+    font-size: 15px;
+    color: var(--text-2);
+    background: var(--note-bg);
+    border: 1px solid var(--note-border);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    line-height: 1.6;
+}
+
+/* ---------- Footer ---------- */
+.footer { border-top: 1px solid var(--border); padding: 32px 0; font-size: 14px; color: var(--text-muted); }
+.footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
+.footer a:hover { color: var(--text); }
+
+/* ---------- Animación ---------- */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.active { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+}
