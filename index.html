@@ -22,8 +22,9 @@
 
     <meta name="theme-color" content="#E5FAEA" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#061319" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/png" href="/images/spent.png">
-    <link rel="apple-touch-icon" href="/images/spent.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png?v=2">
+  <link rel="icon" type="image/png" sizes="400x400" href="/images/spent.png?v=2">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png?v=2">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,11 +92,12 @@
 
     <nav class="nav">
         <div class="container nav-inner">
-            <a href="/" class="brand"><img src="/images/spent.png" alt="" width="28" height="28">Spent</a>
+            <a href="/" class="brand"><img src="/images/spent.png?v=2" alt="" width="28" height="28">Spent</a>
             <div class="nav-links">
                 <a href="#actualizaciones" class="hide-sm">Actualizaciones</a>
                 <a href="#tutoriales">Tutoriales</a>
                 <a href="#equipo" class="hide-sm">Equipo</a>
+                <a href="mailto:hola@spentapp.co?subject=Soporte%20de%20Spent">Soporte</a>
                 <a href="/download" class="btn btn-primary btn-sm">Descargar</a>
             </div>
         </div>
@@ -178,55 +180,37 @@
                 <p class="eyebrow">Tutoriales</p>
                 <h2 class="section-title">Guías paso a paso</h2>
             </div>
-            <div class="tut-list">
-        <!-- tutoriales:start -->
-        <a href="/tutoriales/apple-pay" class="card tut-card reveal">
+            <!-- tutoriales:start -->
+    <div class="tut-list">
+        <a href="/tutoriales/apple-pay" class="card tut-card tut-card-compact" data-platforms="iPhone">
           <img src="/images/tutoriales/icon-apple-wallet.png" alt="" width="52" height="52" class="tut-card-icon">
           <div class="tut-card-body">
             <h3>Registra tus gastos automáticamente con Apple Pay</h3>
-            <p>Crea una automatización en Atajos para que cada vez que pagues con Apple Pay el gasto se agregue solo a Spent, con el comercio y el monto.</p>
-            <div class="tut-chips"><span class="chip">iPhone</span><span class="chip">iOS 27</span><span class="chip">iOS 26</span></div>
+            
+            <div class="tut-chips"><span class="chip">iPhone</span><span class="chip chip-version">iOS 27</span><span class="chip chip-version">iOS 26</span></div>
           </div>
           <span class="tut-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a href="/tutoriales/google-pay" class="card tut-card reveal">
+        <a href="/tutoriales/google-pay" class="card tut-card tut-card-compact" data-platforms="Android">
           <img src="/images/tutoriales/icon-google-pay.png" alt="" width="52" height="52" class="tut-card-icon">
           <div class="tut-card-body">
             <h3>Registra tus gastos automáticamente con Google Pay</h3>
-            <p>Dale acceso a Spent a las notificaciones de Google Pay para que, justo después de pagar, te sugiera agregar el gasto con el comercio y el monto.</p>
+            
             <div class="tut-chips"><span class="chip">Android</span></div>
           </div>
           <span class="tut-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <a href="/tutoriales/correo" class="card tut-card reveal">
-          <img src="/images/tutoriales/icon-apple-mail.png" alt="" width="52" height="52" class="tut-card-icon">
-          <div class="tut-card-body">
-            <h3>Registra un gasto cuando te llega el comprobante por correo</h3>
-            <p>Crea una automatización en Atajos para que, cuando te llegue el correo de transacción de tu banco, Spent te abra el registro del gasto.</p>
-            <div class="tut-chips"><span class="chip">iPhone</span></div>
-          </div>
-          <span class="tut-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a href="/tutoriales/suscripciones" class="card tut-card reveal">
-          <img src="/images/tutoriales/icon-suscripciones.svg" alt="" width="52" height="52" class="tut-card-icon">
-          <div class="tut-card-body">
-            <h3>Agrega tus suscripciones y no te agarre ningún cobro</h3>
-            <p>Registra Netflix, Spotify o cualquier pago recurrente para ver cuánto pagas al mes, cuándo se renueva cada uno y recibir un aviso antes del cobro.</p>
-            <div class="tut-chips"><span class="chip">iPhone y Android</span></div>
-          </div>
-          <span class="tut-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a href="/tutoriales/historial" class="card tut-card reveal">
+        <a href="/tutoriales/historial" class="card tut-card tut-card-compact" data-platforms="iPhone Android">
           <img src="/images/tutoriales/icon-historial.svg" alt="" width="52" height="52" class="tut-card-icon">
           <div class="tut-card-body">
             <h3>Revisa tu historial de gastos</h3>
-            <p>Archiva los gastos de un sobre al cerrar el mes y consulta cuánto gastas en promedio, tu método de pago más usado y el detalle de cada mes.</p>
-            <div class="tut-chips"><span class="chip">iPhone y Android</span></div>
+            
+            <div class="tut-chips"><span class="chip">iPhone</span><span class="chip">Android</span></div>
           </div>
           <span class="tut-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
-        <!-- tutoriales:end -->
-            </div>
+    </div>
+    <!-- tutoriales:end -->
             <a href="/tutoriales" class="see-all">Ver todos los tutoriales <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
     </section>

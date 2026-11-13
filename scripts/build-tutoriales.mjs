@@ -12,6 +12,10 @@ import { spentTutoriales } from "./tutoriales-data.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://spentapp.co";
+// Mismo correo y asunto que usa el app de iOS (SupportEmail en AboutView.swift).
+export const SUPPORT_MAILTO = "mailto:hola@spentapp.co?subject=Soporte%20de%20Spent";
+// Guías que aparecen en la sección #tutoriales del home.
+const HOME_SLUGS = ["apple-pay", "google-pay", "historial"];
 
 const esc = (s = "") =>
   String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -30,10 +34,11 @@ export const icons = {
 const nav = (current) => `
   <nav class="nav">
     <div class="container nav-inner">
-      <a href="/" class="brand"><img src="/images/spent.png" alt="" width="28" height="28">Spent</a>
+      <a href="/" class="brand"><img src="/images/spent.png?v=2" alt="" width="28" height="28">Spent</a>
       <div class="nav-links">
         <a href="/#actualizaciones" class="hide-sm">Actualizaciones</a>
         <a href="/tutoriales"${current === "tutoriales" ? ' aria-current="page"' : ""}>Tutoriales</a>
+        <a href="${SUPPORT_MAILTO}">Soporte</a>
         <a href="/download" class="btn btn-primary btn-sm">Descargar</a>
       </div>
     </div>
@@ -66,8 +71,9 @@ const head = ({ title, description, url, extraCss = "" }) => `<!DOCTYPE html>
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#061319" media="(prefers-color-scheme: dark)">
-  <link rel="icon" type="image/png" href="/images/spent.png">
-  <link rel="apple-touch-icon" href="/images/spent.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png?v=2">
+  <link rel="icon" type="image/png" sizes="400x400" href="/images/spent.png?v=2">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png?v=2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -82,17 +88,72 @@ const ctaSection = `
       <a href="/download" class="btn btn-primary btn-lg">${icons.download}Descargar Spent</a>
     </section>`;
 
-/** Tarjeta de tutorial (se usa en /tutoriales y en el home). */
-export function tutorialCard(t, extraClass = "") {
-  const versions = t.versions.filter((v) => v.steps.length > 0);
-  const chips = [t.platform, ...(versions.length > 1 ? versions.map((v) => v.label) : [])]
-    .map((c) => `<span class="chip">${esc(c)}</span>`)
+const platformChips = (t) => t.platforms.map((p) => `<span class="chip">${esc(p)}</span>`);
+
+/** Filtro por plataforma + lista de tarjetas (página /tutoriales). */
+export function tutorialList(extraClass = "") {
+  const platforms = [...new Set(spentTutoriales.flatMap((t) => t.platforms))];
+  const buttons = ["Todos", ...platforms]
+    .map(
+      (p, i) =>
+        `<button type="button" role="tab" data-filter="${i === 0 ? "" : p}" aria-selected="${i === 0}">${esc(p)}</button>`,
+    )
     .join("");
-  return `<a href="/tutoriales/${t.slug}" class="card tut-card ${extraClass}">
+  return `<div class="segmented tut-filter" role="tablist" aria-label="Filtrar por plataforma">${buttons}</div>
+    <div class="tut-list">
+        ${spentTutoriales.map((t) => tutorialCard(t, extraClass)).join("\n        ")}
+    </div>
+    <p class="tut-empty" hidden>No hay tutoriales para esta plataforma todavía.</p>
+    <script>
+      (function () {
+        var buttons = document.querySelectorAll(".tut-filter [data-filter]");
+        var cards = document.querySelectorAll(".tut-card[data-platforms]");
+        var empty = document.querySelector(".tut-empty");
+        function apply(platform) {
+          var shown = 0;
+          buttons.forEach(function (b) { b.setAttribute("aria-selected", String(b.dataset.filter === platform)); });
+          cards.forEach(function (c) {
+            var match = !platform || c.dataset.platforms.split(" ").indexOf(platform) !== -1;
+            c.hidden = !match;
+            if (match) shown++;
+          });
+          if (empty) empty.hidden = shown > 0;
+        }
+        buttons.forEach(function (b) {
+          b.addEventListener("click", function () {
+            apply(b.dataset.filter);
+            var url = new URL(location.href);
+            if (b.dataset.filter) url.searchParams.set("plataforma", b.dataset.filter.toLowerCase());
+            else url.searchParams.delete("plataforma");
+            history.replaceState(null, "", url);
+          });
+        });
+        var q = (new URLSearchParams(location.search).get("plataforma") || "").toLowerCase();
+        buttons.forEach(function (b) { if (q && b.dataset.filter.toLowerCase() === q) apply(b.dataset.filter); });
+      })();
+    </script>`;
+}
+
+/** Tarjetas compactas (sin descripción ni filtro) para el home. */
+function homeTutorialList() {
+  const items = HOME_SLUGS.map((slug) => spentTutoriales.find((t) => t.slug === slug)).filter(Boolean);
+  return `<div class="tut-list">
+        ${items.map((t) => tutorialCard(t, "tut-card-compact", { summary: false })).join("\n        ")}
+    </div>`;
+}
+
+/** Tarjeta de tutorial (se usa en /tutoriales y en el home). */
+export function tutorialCard(t, extraClass = "", { summary = true } = {}) {
+  const versions = t.versions.filter((v) => v.steps.length > 0);
+  const chips = [
+    ...platformChips(t),
+    ...(versions.length > 1 ? versions.map((v) => `<span class="chip chip-version">${esc(v.label)}</span>`) : []),
+  ].join("");
+  return `<a href="/tutoriales/${t.slug}" class="card tut-card ${extraClass}" data-platforms="${t.platforms.join(" ")}">
           <img src="${t.icon}" alt="" width="52" height="52" class="tut-card-icon">
           <div class="tut-card-body">
             <h3>${esc(t.title)}</h3>
-            <p>${esc(t.summary)}</p>
+            ${summary ? `<p>${esc(t.summary)}</p>` : ""}
             <div class="tut-chips">${chips}</div>
           </div>
           <span class="tut-card-arrow">${icons.arrowRight}</span>
@@ -169,7 +230,7 @@ ${nav("tutoriales")}
     <a href="/tutoriales" class="tut-back">${icons.arrowLeft}Tutoriales</a>
     <header class="tut-header">
       <img src="${t.icon}" alt="" width="64" height="64" class="tut-header-icon">
-      <span class="chip">${esc(t.platform)}</span>
+      <div class="tut-chips">${platformChips(t).join("")}</div>
       <h1>${esc(t.title)}</h1>
       <p class="lead">${esc(t.summary)}</p>
     </header>
@@ -216,9 +277,7 @@ ${nav("tutoriales")}
       <h1>Tutoriales</h1>
       <p class="lead">Guías paso a paso para sacarle el máximo a Spent.</p>
     </header>
-    <div class="tut-list">
-        ${spentTutoriales.map((t) => tutorialCard(t)).join("\n        ")}
-    </div>
+    ${tutorialList()}
     ${ctaSection}
   </main>
 ${footer}
@@ -242,7 +301,6 @@ const homePath = join(root, "index.html");
 const home = await readFile(homePath, "utf8");
 const re = /(<!-- tutoriales:start -->)[\s\S]*?(<!-- tutoriales:end -->)/;
 if (re.test(home)) {
-  const cards = spentTutoriales.map((t) => tutorialCard(t, "reveal")).join("\n        ");
-  await writeFile(homePath, home.replace(re, `$1\n        ${cards}\n        $2`));
+  await writeFile(homePath, home.replace(re, `$1\n    ${homeTutorialList()}\n    $2`));
   console.log("✓ index.html (tarjetas de tutoriales)");
 }

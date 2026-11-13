@@ -13,8 +13,8 @@
     --accent-tint: #E7F8E9;       /* AboutUsCard */
     --profit: #257E3A;            /* profitGreen */
     --loss: #C1130B;              /* lossRed */
-    --primary: #10303F;           /* primaryButtonColor */
-    --on-primary: #FFFFFF;
+    --primary: #7CE495;           /* AccentColor (botones) */
+    --on-primary: #10303F;        /* primaryButtonColor (texto de botones) */
 
     /* Superficies */
     --bg: #FFFFFF;                /* backgroundColor */
@@ -57,7 +57,7 @@
         --profit: #53C66E;
         --loss: #DD443C;
         --primary: #7CE495;
-        --on-primary: #061319;
+        --on-primary: #10303F;
         --bg: #061319;
         --surface: #1B303C;
         --surface-raised: #1B303C;
@@ -112,7 +112,7 @@ a { color: inherit; text-decoration: none; }
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 12px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; }
-.brand img { width: 28px; height: 28px; border-radius: 7px; }
+.brand img { width: 28px; height: 28px; }
 .nav-links { display: flex; align-items: center; gap: 24px; font-size: 15px; font-weight: 500; color: var(--text-3); }
 .nav-links a:not(.btn):hover { color: var(--text); }
 .nav-links a[aria-current="page"] { color: var(--text); }

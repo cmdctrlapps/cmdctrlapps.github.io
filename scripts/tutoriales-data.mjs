@@ -16,7 +16,7 @@ export const applePayTutorial = {
   summary:
     "Crea una automatización en Atajos para que cada vez que pagues con Apple Pay el gasto se agregue solo a Spent, con el comercio y el monto.",
   icon: "/images/tutoriales/icon-apple-wallet.png",
-  platform: "iPhone",
+  platforms: ["iPhone"],
   versions: [
     {
       id: "ios27",
@@ -141,7 +141,7 @@ export const googlePayTutorial = {
   summary:
     "Dale acceso a Spent a las notificaciones de Google Pay para que, justo después de pagar, te sugiera agregar el gasto con el comercio y el monto.",
   icon: "/images/tutoriales/icon-google-pay.png",
-  platform: "Android",
+  platforms: ["Android"],
   versions: [
     {
       id: "android",
@@ -199,7 +199,7 @@ export const correoTutorial = {
   summary:
     "Crea una automatización en Atajos para que, cuando te llegue el correo de transacción de tu banco, Spent te abra el registro del gasto.",
   icon: "/images/tutoriales/icon-apple-mail.png",
-  platform: "iPhone",
+  platforms: ["iPhone"],
   versions: [
     {
       id: "ios",
@@ -267,7 +267,7 @@ export const suscripcionesTutorial = {
   summary:
     "Registra Netflix, Spotify o cualquier pago recurrente para ver cuánto pagas al mes, cuándo se renueva cada uno y recibir un aviso antes del cobro.",
   icon: "/images/tutoriales/icon-suscripciones.svg",
-  platform: "iPhone y Android",
+  platforms: ["iPhone", "Android"],
   versions: [
     {
       id: "ios",
@@ -296,17 +296,12 @@ export const suscripcionesTutorial = {
         {
           title: "Conéctala a un sobre y activa los recordatorios (opcional)",
           body: "En <strong>Opciones avanzadas</strong>:<ul><li><strong>Conectar a un sobre:</strong> agrega la suscripción como gasto en el sobre que elijas cada vez que se renueva.</li><li><strong>Recibir recordatorios:</strong> Spent te avisa 2 días antes de la renovación.</li></ul>Estas dos opciones son parte de Spent Pro.",
-          media: [{ src: `${sus}/05-opciones.jpg`, alt: "Opciones avanzadas con Conectar a un sobre y Recibir recordatorios activados" }],
+          media: [{ src: `${sus}/05-opciones.jpg`, alt: "Opciones avanzadas con el sobre Salidas conectado y Recibir recordatorios activado" }],
         },
         {
-          title: "Guarda y permite las notificaciones",
-          body: "Toca el check ✔︎ arriba a la derecha. Si activaste los recordatorios, toca <strong>Permitir</strong> cuando Spent te pida enviarte notificaciones.",
-          media: [{ src: `${sus}/06-notificaciones.jpg`, alt: "Diálogo Spent quiere enviarte notificaciones" }],
-        },
-        {
-          title: "Listo",
-          body: "Tu suscripción aparece en la lista con su monto y frecuencia, y arriba ves el <strong>Total mensual</strong> de todas tus suscripciones.",
-          media: [{ src: `${sus}/07-listo.jpg`, alt: "Lista de suscripciones con Netflix y el total mensual" }],
+          title: "Guarda y listo",
+          body: "Toca el check ✔︎ arriba a la derecha. Si activaste los recordatorios y Spent te pide enviarte notificaciones, toca <strong>Permitir</strong>. Tu suscripción aparece en la lista con su monto y frecuencia, y arriba ves el <strong>Total mensual</strong> de todas tus suscripciones.",
+          media: [{ src: `${sus}/06-listo.jpg`, alt: "Lista de suscripciones con Netflix y el total mensual" }],
         },
       ],
     },
@@ -321,7 +316,7 @@ export const historialTutorial = {
   summary:
     "Archiva los gastos de un sobre al cerrar el mes y consulta cuánto gastas en promedio, tu método de pago más usado y el detalle de cada mes.",
   icon: "/images/tutoriales/icon-historial.svg",
-  platform: "iPhone y Android",
+  platforms: ["iPhone", "Android"],
   versions: [
     {
       id: "todos",
@@ -331,7 +326,7 @@ export const historialTutorial = {
         {
           title: "Abre un sobre",
           body: "En la pestaña <strong>Gastos</strong>, toca el sobre que quieres revisar.",
-          media: [{ src: `${hist}/01-sobre.jpg`, alt: "Detalle del sobre Going out con sus últimos movimientos" }],
+          media: [{ src: `${hist}/01-sobre.jpg`, alt: "Detalle del sobre Salidas con sus últimos movimientos" }],
         },
         {
           title: "Abre el menú del sobre",
@@ -356,7 +351,7 @@ export const historialTutorial = {
         {
           title: "Abre un mes para ver el detalle",
           body: "En <strong>Historial</strong>, toca un mes para ver cada gasto con su fecha, monto y método de pago.",
-          media: [{ src: `${hist}/06-mes.jpg`, alt: "Mes de septiembre expandido con sus gastos" }],
+          media: [{ src: `${hist}/06-mes.jpg`, alt: "Mes de noviembre expandido con sus gastos" }],
         },
       ],
     },
