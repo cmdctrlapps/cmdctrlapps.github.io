@@ -357,6 +357,103 @@ export const historialTutorial = {
     },
   ],
 };
+const rei = "/images/tutoriales/reinicio";
+
+export const reinicioTutorial = {
+  slug: "reinicio-automatico",
+  title: "Reinicia tus sobres automáticamente",
+  summary:
+    "Elige un día para que Spent archive los gastos de tus sobres y empiecen de cero, sin que tengas que hacerlo a mano.",
+  icon: "/images/tutoriales/icon-reinicio.svg",
+  platforms: ["iPhone", "Android"],
+  versions: [
+    {
+      id: "todos",
+      label: "iPhone y Android",
+      note: "Cuando un sobre se reinicia, sus gastos se archivan y pasan al <a href=\"/tutoriales/historial\">historial</a>, y el sobre vuelve a tener todo su presupuesto disponible.",
+      steps: [
+        {
+          title: "Abre Reinicio automático",
+          body: "Puedes entrar desde un sobre, en el menú <strong>⋯</strong> › <strong>Reinicio automático</strong>, o desde la pestaña <strong>Ajustes</strong> › <strong>Reinicio automático</strong>.",
+          media: [
+            { src: `${rei}/01-menu.jpg`, alt: "Menú del sobre con la opción Reinicio automático", caption: "Desde el sobre" },
+            { src: `${rei}/00-ajustes.jpg`, alt: "Ajustes de Spent con la opción Reinicio automático", caption: "Desde Ajustes" },
+          ],
+        },
+        {
+          title: "Busca el sobre que quieres reiniciar",
+          body: "Ves la lista de todos tus sobres con su reinicio actual. Los que no tienen reinicio dicen <strong>Desactivado</strong>.",
+          media: [{ src: `${rei}/02-lista.jpg`, alt: "Lista de sobres Salidas y Supermercado con el reinicio desactivado" }],
+        },
+        {
+          title: "Elige cada cuánto se reinicia",
+          body: "Toca <strong>Desactivado</strong> junto al sobre y elige una opción: <strong>Cada lunes</strong>, <strong>El 1ro de cada mes</strong>, <strong>El 1ro y 15 de cada mes</strong> o <strong>Personalizado</strong> para escoger tu propia fecha.",
+          media: [{ src: `${rei}/03-opciones.jpg`, alt: "Opciones de reinicio: cada lunes, el 1ro de cada mes, el 1ro y 15, personalizado y desactivado" }],
+        },
+        {
+          title: "Listo",
+          body: "El sobre ahora muestra un calendario con su fecha de reinicio. Ese día, Spent archiva sus gastos y te avisa que el sobre empezó de nuevo.",
+          media: [{ src: `${rei}/04-activado.jpg`, alt: "Sobre Salidas con el reinicio activado el día 1" }],
+        },
+        {
+          title: "Pasa lo que sobre al siguiente período (opcional)",
+          body: "En el sobre, toca <strong>⋯</strong> › <strong>Editar sobre</strong> y activa <strong>Acumular saldo</strong>. Así, lo que no gastes se suma al siguiente período y lo que te pases se le resta. Acumular saldo es parte de Spent Pro.",
+          media: [{ src: `${rei}/05-acumular.jpg`, alt: "Editar sobre con Reinicio automático el 1ro de cada mes y Acumular saldo activado" }],
+        },
+      ],
+    },
+  ],
+};
+
+const comp = "/images/tutoriales/compartir";
+
+export const compartirTutorial = {
+  slug: "compartir-sobres",
+  title: "Comparte un sobre con otra persona",
+  summary:
+    "Invita a tu pareja, familia o roomies a un sobre con un código para que los dos registren gastos y vean el mismo saldo.",
+  icon: "/images/tutoriales/icon-compartir.svg",
+  platforms: ["iPhone", "Android"],
+  versions: [
+    {
+      id: "todos",
+      label: "iPhone y Android",
+      note: "Para compartir sobres, las dos personas necesitan <strong>Spent Pro</strong> y haber iniciado sesión en Spent con Google o Apple.",
+      steps: [
+        {
+          title: "Abre Compartir sobres",
+          body: "Ve a la pestaña <strong>Ajustes</strong> y toca <strong>Compartir sobres</strong>. También puedes tocar el ícono de persona arriba de cualquier sobre.",
+          media: [
+            { src: `${comp}/00-ajustes.jpg`, alt: "Ajustes de Spent con la opción Compartir sobres", caption: "Desde Ajustes" },
+            { src: `${comp}/01-sobre.jpg`, alt: "Sobre Salidas con el ícono para compartir arriba", caption: "Desde el sobre" },
+          ],
+        },
+        {
+          title: "Elige el sobre que quieres compartir",
+          body: "Toca el sobre en la lista. Abajo está <strong>Recibir un sobre</strong>, que es lo que va a usar la otra persona.",
+          media: [{ src: `${comp}/03-lista.jpg`, alt: "Lista para seleccionar el sobre que quieres compartir y la opción Recibir un sobre" }],
+        },
+        {
+          title: "Inicia sesión si te lo pide",
+          body: "Si todavía no has iniciado sesión, Spent te pide entrar con <strong>Google</strong> o <strong>Apple</strong>. La cuenta es la que sincroniza el sobre entre los dos teléfonos.",
+          media: [{ src: `${comp}/02-login.jpg`, alt: "Pantalla para iniciar sesión con Google o Apple" }],
+        },
+        {
+          title: "Genera el código de invitación",
+          body: "Toca <strong>Generar código de invitación</strong>. Spent crea un código de 6 caracteres: toca <strong>Copiar código</strong> y envíaselo a la otra persona. Si necesitas uno nuevo, usa <strong>Generar nuevo código</strong>.",
+        },
+        {
+          title: "La otra persona se une con el código",
+          body: "En su teléfono, la otra persona va a <strong>Ajustes</strong> › <strong>Compartir sobres</strong> › <strong>Recibir un sobre</strong>, escribe o pega el código y toca <strong>Unirse al sobre</strong>.",
+        },
+        {
+          title: "Listo, ya comparten el sobre",
+          body: "El sobre aparece en los dos teléfonos y los gastos que registre cada uno se sincronizan. En la pantalla de compartir ves la lista de <strong>Miembros</strong> del sobre.",
+        },
+      ],
+    },
+  ],
+};
 
 export const spentTutoriales = [
   applePayTutorial,
@@ -364,4 +461,6 @@ export const spentTutoriales = [
   correoTutorial,
   suscripcionesTutorial,
   historialTutorial,
+  reinicioTutorial,
+  compartirTutorial,
 ];

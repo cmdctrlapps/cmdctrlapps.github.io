@@ -26,7 +26,7 @@
 
 .tut-back {
   display: inline-flex; align-items: center; gap: 6px;
-  font-size: 15px; font-weight: 500; color: var(--link);
+  font-size: 15px; font-weight: 500; color: var(--accent-strong);
   margin-bottom: 28px;
 }
 .tut-back svg { width: 18px; height: 18px; }
@@ -108,3 +108,6 @@
 .tut-card-compact .tut-card-body h3 { font-size: 17px; }
 .tut-card-compact .tut-chips { margin-top: 8px; }
 .tut-card-compact .tut-card-arrow { display: inline-flex; }
+
+/* Links dentro de notas */
+.note a { color: var(--link); font-weight: 500; text-decoration: underline; text-underline-offset: 2px; }
